@@ -7,7 +7,7 @@
                         const { exit } = require('process');
                         const { Server } = require('http');
                         const client = new Discord.Client();
-                        client.login('NzM5Nzk0MTc5MDcyMTk2NzA0.XyfpBQ.QSnsP9Fsr7po1otDo8oJyPmxVkU');
+                        client.login('6666666666666666666666666666666666666666666666');
 
                 //#endregion
 
@@ -76,21 +76,21 @@
                 client.on('message', message => {
 
                         if (
-                                message.content === '!yo' & !message.author.bot  ||
-                                message.content === '!yo le bot'  & !message.author.bot ||
-                                message.content === 'et le bot' & !message.author.bot  ||
-                                message.content === '!wsh'  & !message.author.bot        ||
-                                message.content === '!bonjour' & !message.author.bot  ||
-                                message.content === '!et le bot' & !message.author.bot  ||
-                                message.content === '!hey'  & !message.author.bot ||
-                                message.content === 'LeBotDeSkwal' & !message.author.bot  || 
-                                message.content === '!hé, dis' & !message.author.bot  || 
-                                message.content === '!hé le bot!' & !message.author.bot  || 
-                                message.content === '!wesh' & !message.author.bot || 
-                                message.content === '!'  & !message.author.bot || 
-                                message.content === 'he le bot' & !message.author.bot  || 
-                                message.content === 'yo le bot' & !message.author.bot  || 
-                                message.content === '!he le bot' & !message.author.bot 
+                                message.content.toLocaleLowerCase()  === '!yo' & !message.author.bot  ||
+                                message.content.toLocaleLowerCase()  === '!yo le bot'  & !message.author.bot ||
+                                message.content.toLocaleLowerCase()  === 'et le bot' & !message.author.bot  ||
+                                message.content.toLocaleLowerCase()  === '!wsh'  & !message.author.bot        ||
+                                message.content.toLocaleLowerCase()  === '!bonjour' & !message.author.bot  ||
+                                message.content.toLocaleLowerCase()  === '!et le bot' & !message.author.bot  ||
+                                message.content.toLocaleLowerCase()  === '!hey'  & !message.author.bot ||
+                                message.content.toLocaleLowerCase()  === 'LeBotDeSkwal' & !message.author.bot  || 
+                                message.content.toLocaleLowerCase()  === '!hé, dis' & !message.author.bot  || 
+                                message.content.toLocaleLowerCase()  === '!hé le bot!' & !message.author.bot  || 
+                                message.content.toLocaleLowerCase()  === '!wesh' & !message.author.bot || 
+                                message.content.toLocaleLowerCase()  === '!'  & !message.author.bot || 
+                                message.content.toLocaleLowerCase()  === 'he le bot' & !message.author.bot  || 
+                                message.content.toLocaleLowerCase()  === 'yo le bot' & !message.author.bot  || 
+                                message.content.toLocaleLowerCase()  === '!he le bot' & !message.author.bot 
                          
                         
                         ) {
@@ -115,12 +115,12 @@
                 client.on('message', message => {
 
                         if (
-                                message.content === '!info' ||
-                                message.content === '!help' ||
-                                message.content === '!infos' 
+                                message.content.toLocaleLowerCase() === '!info' ||
+                                message.content.toLocaleLowerCase() === '!help' ||
+                                message.content.toLocaleLowerCase() === '!infos' 
                         ){         
 
-                                message.channel.send("Bonjour, \nJe suis un bot, \nOn m'appelle LeBotDeSkwal parce que..... \nBah parce que j'ai été crée par Skwal t'es con ou quoi xD, \nToi, oui toi, tu peut me parler en commançant tes message par un ! \n En attenddant, voici ce que je peux faire : \n!help :          Affiche ce message\n");
+                                message.channel.send("Bonjour, \nJe suis un bot, \nOn m'appelle LeBotDeSkwal parce que..... \nBah parce que j'ai été crée par Skwal t'es con ou quoi xD, \nToi, oui toi, tu peut me parler en commançant tes message par un ! \n En attendant, voici ce que je peux faire : \n \n!ban {user} :            Banni l'utilisateur spécifié si vous en avez l'autorisation ! \n!help :                       Affiche ce message \n!kick :              Exclu l'utilisateur spécifié si vous en avez l'autorisation ! \n!yo \n!ca va \n!tu fais quoi \n!Raconte une blague \n!surprend moi \n!dis un nombre au hazard");
                                 console.log("Nouveau message '" + message.content + "'");
                                 setTimeout(function(){ console.log("Preparation de la reponse automatisée...."); }, 200);
                                 setTimeout(function(){ console.log("Envoie de la reponse automatisée....    "); }, 400);
@@ -138,20 +138,20 @@
                 client.on('message', message => {
 
                         if (
-                                message.content === '!bien ou bien'             ||
-                                message.content === '!ca va'                    ||
-                                message.content === '!yo le bot ca va'          ||
-                                message.content === 'he le bot comment ca va'   ||
-                                message.content === '!he le bot comment ca va'  ||
-                                message.content === 'he le bot ca va'           ||
-                                message.content === '!cava'                     ||
-                                message.content === '!bien ou quoi'             ||
-                                message.content === '!commentcavabien'          ||
-                                message.content === '!he le bot ca va'          ||
-                                message.content === '!yo ca va'                 ||
-                                message.content === '!comment tu vas'           ||
-                                message.content === '!comment ca va'            ||
-                                message.content === '!he le bot comment tu vas'
+                                message.content.toLocaleLowerCase()  === '!bien ou bien'             ||
+                                message.content.toLocaleLowerCase()  === '!ca va'                    ||
+                                message.content.toLocaleLowerCase()  === '!yo le bot ca va'          ||
+                                message.content.toLocaleLowerCase()  === 'he le bot comment ca va'   ||
+                                message.content.toLocaleLowerCase()  === '!he le bot comment ca va'  ||
+                                message.content.toLocaleLowerCase()  === 'he le bot ca va'           ||
+                                message.content.toLocaleLowerCase()  === '!cava'                     ||
+                                message.content.toLocaleLowerCase()  === '!bien ou quoi'             ||
+                                message.content.toLocaleLowerCase()  === '!commentcavabien'          ||
+                                message.content.toLocaleLowerCase()  === '!he le bot ca va'          ||
+                                message.content.toLocaleLowerCase()  === '!yo ca va'                 ||
+                                message.content.toLocaleLowerCase()  === '!comment tu vas'           ||
+                                message.content.toLocaleLowerCase()  === '!comment ca va'            ||
+                                message.content.toLocaleLowerCase()  === '!he le bot comment tu vas'
                                 
                         ){
 
@@ -185,15 +185,15 @@
                 client.on('message', message => {
 
                         if (
-                                message.content === "!raconte moi une blague"           ||
-                                message.content === "!raconte une blague"               ||
-                                message.content === "!blague"                           || 
-                                message.content === "!une blague"                       || 
-                                message.content === "!encore une blague"                || 
-                                message.content === "!fait moi une blague"              || 
-                                message.content === "!fait une blague"                  || 
-                                message.content === "!fais une blague"                  || 
-                                message.content === "!fais moi une blague"
+                                message.content.toLocaleLowerCase()  === "!raconte moi une blague"           ||
+                                message.content.toLocaleLowerCase()  === "!raconte une blague"               ||
+                                message.content.toLocaleLowerCase()  === "!blague"                           || 
+                                message.content.toLocaleLowerCase()  === "!une blague"                       || 
+                                message.content.toLocaleLowerCase()  === "!encore une blague"                || 
+                                message.content.toLocaleLowerCase()  === "!fait moi une blague"              || 
+                                message.content.toLocaleLowerCase()  === "!fait une blague"                  || 
+                                message.content.toLocaleLowerCase()  === "!fais une blague"                  || 
+                                message.content.toLocaleLowerCase()  === "!fais moi une blague"
                         ) {
 
                                 
@@ -414,10 +414,10 @@
                 client.on('message', message => {
 
                         if (
-                                message.content === '!envoie une photo de toi' ||
-                                message.content === '!envoi une photo de toi' ||
-                                message.content === '!envois une photo de toi' ||
-                                message.content === '!envoie moi une photo de toi' 
+                                message.content.toLocaleLowerCase()  === '!envoie une photo de toi' ||
+                                message.content.toLocaleLowerCase()  === '!envoi une photo de toi' ||
+                                message.content.toLocaleLowerCase()  === '!envois une photo de toi' ||
+                                message.content.toLocaleLowerCase()  === '!envoie moi une photo de toi' 
                         ){
 
                                 message.channel.send("https://zupimages.net/up/20/32/ehyk.png");
@@ -441,10 +441,8 @@
                 client.on('message', message => {
 
                         if (
-                                message.content.includes('tchoupi') ||
-                                message.content.includes('Tchoupi') ||
-                                message.content.includes('!Tchoupi') ||
-                                message.content.includes('!tchoupi') 
+                                message.content.toLocaleLowerCase().includes('tchoupi') ||
+                                message.content.toLocaleLowerCase().includes('!tchoupi') 
                         ){
 
                                 message.channel.send("Salut c'est moi Tchoupi\nJe marche vers l'école\nJ'ai de nouveaux amis\nTous ensemble on rigole\nOn n'est plus des petits\nOn attend la sonnerie\nC'est fini la recré\nTous en rang s'il vous plaît\nOn vas lire et compter\nDessiner et chanter\nOn va bien s'amuser\nViens à l'école avec Tchoupi");
@@ -469,10 +467,10 @@
                 client.on('message', message => {
 
                         if (
-                                message.content === '!tfq' ||
-                                message.content === '!tu fe quoi' ||
-                                message.content === '!tu fait quoi' ||
-                                message.content === '!tu fais quoi'
+                                message.content.toLocaleLowerCase()  === '!tfq' ||
+                                message.content.toLocaleLowerCase()  === '!tu fe quoi' ||
+                                message.content.toLocaleLowerCase()  === '!tu fait quoi' ||
+                                message.content.toLocaleLowerCase()  === '!tu fais quoi'
 
                         ){
 
@@ -494,11 +492,11 @@
         //#region AGE 
                 client.on('message', message => {
                         if (
-                                message.content === "!t'as quel age" ||
-                                message.content === "!ta quel age" ||
-                                message.content === "!t'es ne quand" ||
-                                message.content === "!he le bot ta quel age" ||
-                                message.content === "!t'a quel age"
+                                message.content.toLocaleLowerCase()  === "!t'as quel age" ||
+                                message.content.toLocaleLowerCase()  === "!ta quel age" ||
+                                message.content.toLocaleLowerCase()  === "!t'es ne quand" ||
+                                message.content.toLocaleLowerCase()  === "!he le bot ta quel age" ||
+                                message.content.toLocaleLowerCase()  === "!t'a quel age"
                                 
                         ){
                                 message.channel.send("Je suis ne le [  " + client.user.createdAt.getDay() + "  /  " + client.user.createdAt.getMonth() + " / " + client.user.createdAt.getFullYear() + " ] a " + client.user.createdAt.getHours() + " Heures, " + client.user.createdAt.getMinutes() + " Minutes, " + client.user.createdAt.getSeconds() + " Secondes et " + client.user.createdAt.getMilliseconds() + " Millisecondes :D")
@@ -517,10 +515,10 @@
 
                 client.on('message', message => {
                         if (
-                                message.content === "!surprend moi" ||
-                                message.content === "!surpren moi" ||
-                                message.content === "!surpren moi" ||
-                                message.content === "!surprend moi encore" 
+                                message.content.toLocaleLowerCase()  === "!surprend moi" ||
+                                message.content.toLocaleLowerCase()  === "!surpren moi" ||
+                                message.content.toLocaleLowerCase()  === "!surpren moi" ||
+                                message.content.toLocaleLowerCase()  === "!surprend moi encore" 
                         ){
                                 GetRandomInt(1, 2)
 
@@ -550,11 +548,11 @@
         //#region LANCER DE DE 
                 client.on('message', message => {
                         if (
-                                message.content === "!nombre aleatoir" ||
-                                message.content === "!lance un de" ||
-                                message.content === "!dis encore un nombre au hazard" ||
-                                message.content === "!dis moi un nombre aleatoir" ||
-                                message.content === "!dis un nombre au hazard" 
+                                message.content.toLocaleLowerCase()  === "!nombre aleatoir" ||
+                                message.content.toLocaleLowerCase()  === "!lance un de" ||
+                                message.content.toLocaleLowerCase()  === "!dis encore un nombre au hazard" ||
+                                message.content.toLocaleLowerCase()  === "!dis moi un nombre aleatoir" ||
+                                message.content.toLocaleLowerCase()  === "!dis un nombre au hazard" 
                         ){
                                 GetRandomInt(1, 100)
 
@@ -576,21 +574,21 @@
         //#region REPETE
                 client.on('message', message => {
                         if (
-                                message.content.startsWith('!dis ')
+                                message.content.toLocaleLowerCase().startsWith('!dis ')
                         ){
                                 message.delete();
                                 message.channel.send(message.content.substring(4, 10000));
                         }
 
                         if (
-                                message.content.startsWith('!dit ')
+                                message.content.toLocaleLowerCase().startsWith('!dit ')
                         ){
                                 message.delete();
                                 message.channel.send(message.content.substring(4, 10000));
                         }
 
                         if (
-                                message.content.startsWith('!repete ')
+                                message.content.toLocaleLowerCase().startsWith('!repete ')
                         ){
                                 message.delete();
                                 message.channel.send(message.content.substring(7, 10000));
@@ -629,7 +627,7 @@
                         client.on('message', message => {
                                 if (!message.guild) return;
                                 if(
-                                        message.content.startsWith('!kick ')
+                                        message.content.toLocaleLowerCase().startsWith('!kick ')
 
                                 ){
                                         if 
@@ -686,7 +684,7 @@
                 client.on('message', message => {
                         if (!message.guild) return;
                         if(
-                                message.content.startsWith('!ban ')
+                                message.content.toLocaleLowerCase().startsWith('!ban ')
 
                         ){
                                 if 
@@ -739,7 +737,6 @@
 
         //#endregion
 
-
         //#region EXIT  
                 client.on('message', message => {
 
@@ -787,6 +784,30 @@
 
         //#endregion 
 
+        //#region CREATE CHANNEL
+                
+                client.on('message', message => {
+
+                        if 
+                        (
+                                message.content.toLocaleLowerCase().startsWith("!channel.create ") & !message.content === '' & !message.content.includes('ㅤ')
+                        ){
+                                if 
+                                (
+                                        message.member.hasPermission('ADMINISTRATOR')
+                                ){
+                                        message.guild.channels.create(message.content.substring(16, 10000))
+                                        message.channel.send("Le salon textuel " + message.content.substring(16, 10000) + " a été crée avec succes !")
+                                }
+                                else
+                                {
+                                        message.channel.send("Vous n'avez pas la permission de faire ca !")
+                                }
+                        }
+                        
+                });
+                
+        //#endregion
 
 //#endregion
 
