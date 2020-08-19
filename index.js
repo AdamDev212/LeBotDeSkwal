@@ -7,7 +7,7 @@
                         const { exit } = require('process');
                         const { Server } = require('http');
                         const client = new Discord.Client();
-                        client.login('NzM5Nzk0MTc5MDcyMTk2NzA0.XyfpBQ.5HpQqJwZAf1iAtSIFwr7n9sWIVA');
+                        client.login('NzM5Nzk0MTc5MDcyMTk2NzA0.XyfpBQ.QSnsP9Fsr7po1otDo8oJyPmxVkU');
 
                 //#endregion
 
