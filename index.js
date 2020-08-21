@@ -7,7 +7,8 @@
                         const { exit } = require('process');
                         const { Server } = require('http');
                         const client = new Discord.Client();
-                        client.login('6666666666666666666666666666666666666666666666');
+                        client.login('NzM5Nzk0MTc5MDcyMTk2NzA0.XyfpBQ.HQoaOVbh-xCrjYogz1o4GwGvfuo');
+                        
 
                 //#endregion
 
@@ -53,19 +54,48 @@
                 client.on('guildMemberRemove', member => {
 
 
+                        const ByeEmbed = new Discord.MessageEmbed()
+                                .setColor('#18ffff')
+                                .setAuthor('LeBotDeSkwal', 'https://cdn.discordapp.com/avatars/739794179072196704/14289541d905dca6f8f2ad6961acd82a.webp')
+                                .setTitle(':sneezing_face: Bon depart, tu nous manqueras :sob::cry:')
+                                .setDescription(`:sneezing_face: ${member} Vient de QUITTER le serveur ! :sob::cry: `)
+                                .setThumbnail(member.user.avatarURL())
+                                .setTimestamp();
+                                
+
+
+
                         const channel = member.guild.channels.cache.find(ch => ch.name === '『👋』𝗠𝗲𝗺𝗯𝗿𝗲𝘀');
-                        channel.send(`${member} a quitté le serveur :sob: tu nous manqueras :cry:`);
+                        channel.send(ByeEmbed);
+
+
+
                         
+                        member.send(ByeEmbed);
                 });
         //#endregion 
 
         //#region NOUVEAU MEMBRE
                 client.on('guildMemberAdd', member => {
+                        const WelcomEmbed = new Discord.MessageEmbed()
+                                .setColor('#18ffff')
+                                .setAuthor('LeBotDeSkwal', 'https://cdn.discordapp.com/avatars/739794179072196704/14289541d905dca6f8f2ad6961acd82a.webp')
+                                .setTitle('Bienvenue dans le serveur de Skwal ! <a:hi:744172079917695012> <a:dance:744172321723383838>')
+                                .setDescription(`${member} Vient de rejoindre le serveur ! <a:hi:744172079917695012> <a:dance:744172321723383838> `)
+                                .setThumbnail(member.user.avatarURL())
+                                .setFooter("Si tu as des question, n'hesite pas a les poser !")
+                                .setTimestamp();
+                                
+
+
+
                         const channel = member.guild.channels.cache.find(ch => ch.name === '『👋』𝗠𝗲𝗺𝗯𝗿𝗲𝘀');
-                        channel.send(`<a:dance:744172321723383838> Bonjour, ${member},   <a:dance:744172321723383838> <a:hi:744172079917695012> Bienvenue dans le serveur De Skwal  <a:dance:744172321723383838> <a:dance:744172321723383838> <a:dance:744172321723383838> <a:dance:744172321723383838> <a:dance:744172321723383838> <a:dance:744172321723383838> <a:dance:744172321723383838>`);
+                        channel.send(WelcomEmbed);
+
+
+
                         
-                        
-                        member.send(`<a:dance:744172321723383838> Bonjour, ${member},   <a:dance:744172321723383838> <a:hi:744172079917695012> Bienvenue dans le serveur De Skwal  <a:dance:744172321723383838> <a:dance:744172321723383838> <a:dance:744172321723383838> <a:dance:744172321723383838> <a:dance:744172321723383838> <a:dance:744172321723383838> <a:dance:744172321723383838>`);
+                        member.send(WelcomEmbed);
                 });
         
         
@@ -97,11 +127,7 @@
 
                                 
                                 message.channel.send("Ouai mec qu'est ce qu'y a ? Parle moi en commançant tes message par '!'");
-                                console.log("Nouveau message " + message.content);
-                                setTimeout(function(){ console.log("Preparation de la reponse automatisée...."); }, 200);
-                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....    "); }, 400);
-                                setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
+                                
                                 
                         }
 
@@ -109,7 +135,7 @@
 
         //#endregion
 
-        //#region INFOS
+        //#region HELP
 
 
                 client.on('message', message => {
@@ -120,13 +146,30 @@
                                 message.content.toLocaleLowerCase() === '!infos' 
                         ){         
 
-                                message.channel.send("Bonjour, \nJe suis un bot, \nOn m'appelle LeBotDeSkwal parce que..... \nBah parce que j'ai été crée par Skwal t'es con ou quoi xD, \nToi, oui toi, tu peut me parler en commançant tes message par un ! \n En attendant, voici ce que je peux faire : \n \n!ban {user} :            Banni l'utilisateur spécifié si vous en avez l'autorisation ! \n!help :                       Affiche ce message \n!kick :              Exclu l'utilisateur spécifié si vous en avez l'autorisation ! \n!yo \n!ca va \n!tu fais quoi \n!Raconte une blague \n!surprend moi \n!dis un nombre au hazard");
-                                console.log("Nouveau message '" + message.content + "'");
-                                setTimeout(function(){ console.log("Preparation de la reponse automatisée...."); }, 200);
-                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....    "); }, 400);
-                                setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
-                        }
+                                const HelpEmbed = new Discord.MessageEmbed()
+                                .setColor('#18ffff')
+                                .setAuthor('LeBotDeSkwal', 'https://cdn.discordapp.com/avatars/739794179072196704/14289541d905dca6f8f2ad6961acd82a.webp')
+                                .setTitle(`Aide LeBotDeSkwal`)
+                                .setDescription(`Bonjour, Je suis un bot, On m'appelle LeBotDeSkwal parce que..... Bah parce que j'ai été crée par Skwal t'es con ou quoi xD, 
+                                Toi, oui toi, tu peut me parler en commançant tes message par un ! 
+                                En attendant, voici ce que je peux faire :  
+                                **!help** : Affiche ce message
+                                **!ban** {user} : Banni l'utilisateur spécifié si vous en avez l'autorisation ! 
+                                **!kick** : Exclu l'utilisateur spécifié si vous en avez l'autorisation ! 
+                                
+                                Vous pouvez aussi me parler comme a votre ami 
+                                **Exemple** : !yo, !ca va, !tu fais quoi, !raconte moi une blague....
+                                **PS** : n'oublie pas de t'abonner a notre chaine si ce n'est pas deja fait  
+                                
+                                **[Notre chaine](https://youtube.com/Skwal) ● [Notre site web](https://skwal.tk) ● [Invitez moi](https://discord.com/api/oauth2/authorize?client_id=739794179072196704&permissions=8&scope=bot)**`)
+                                
+                                .setThumbnail("https://img.icons8.com/bubbles/2x/help.png")
+
+                                .setTimestamp();
+                                
+                                message.channel.send(HelpEmbed)
+
+                                }
                 });
 
         
@@ -158,20 +201,11 @@
                                 GetRandomInt(1, 2)
                                 if (RandomInt == 1){
                                                 message.channel.send("Ouai, Je Pete La Forme !");
-                                                console.log("Nouveau message '" + message.content + "'");
-                                                setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                                setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                 }
 
                                 if (RandomInt == 2){
                                                 message.channel.send("Super, Je Vais Archi Bien !");
-                                                console.log("Nouveau message '" + message.content + "'");
-                                                setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                                setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
+                                                
                                 }
                                                 
                         }
@@ -202,11 +236,6 @@
                                         message.channel.send("Comment un développeur tente-t-il de réparer sa voiture lorsqu'il a un problème ?");
                                         setTimeout(function(){ message.channel.send("Il sort de la voiture, ferme toutes les fenêtres, retourne dans la voiture, et essaie de redémarrer."); }, 4000);
                                         
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                         return;
                                 }
                         
@@ -214,11 +243,6 @@
                                         message.channel.send("A quoi sert ineternet explorer ?");
                                         setTimeout(function(){ message.channel.send("A telecharger Google Chrome !"); }, 2000);
                                         
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                         return;
                                 }
 
@@ -226,11 +250,6 @@
                                         message.channel.send("T'as pris quoi comme résolution pour cette nouvelle année ?");
                                         setTimeout(function(){ message.channel.send("1080p."); }, 2000);
                                 
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                         return;
                                 }
 
@@ -238,11 +257,6 @@
                                         message.channel.send("Les filles, c'est comme les adresses web, ");
                                         setTimeout(function(){ message.channel.send("Elles sont toutes déjà prises"); }, 1000);
                                 
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                         return;
                                 }
 
@@ -250,11 +264,6 @@
                                         message.channel.send("De quelle couleur sont tes yeux ?");
                                         setTimeout(function(){ message.channel.send("#1292f4 et toi ? :)"); }, 1000);
                                 
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                         return;
                                 }
                                 
@@ -263,11 +272,6 @@
                                         message.channel.send("Que fait un geek anglais quand il a faim ?");
                                         setTimeout(function(){ message.channel.send("Il mange du padding."); }, 1000);
                                 
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                         return;
                                 }
                                 
@@ -275,11 +279,6 @@
                                         message.channel.send("Que dit un informaticien en colere ?");
                                         setTimeout(function(){ message.channel.send("Fichieeeer"); }, 1000);
                                 
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                         return;
                                 }
                                 
@@ -287,22 +286,12 @@
                                         message.channel.send("Que Fait un ordinateur sur un bateau ?");
                                         setTimeout(function(){ message.channel.send("Il rame !"); }, 1000);
                                 
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                         return;
                                 }
                                 
                                 if (RandomInt  == 9){
                                         message.channel.send("De nos jours, le zip ça devient rar....");
 
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                         return;
                                 }
                                 
@@ -310,22 +299,12 @@
                                         message.channel.send('Dans le manuel du logiciel il y avait ecrit "Nécessite Windows XP ou mieux"');
                                         setTimeout(function(){ message.channel.send("Donc j'ai installé Linux !"); }, 1000);
                                 
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                         return;
                                 }
                                 
                                 if (RandomInt  == 11){
                                         message.channel.send("A son mariage, un geek accepte les conditions et termes d'utilisation.");
                                 
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                         return;
                                 }
 
@@ -333,11 +312,6 @@
                                         message.channel.send('Quand est ce que Windows ne bug pas ?');
                                         setTimeout(function(){ message.channel.send("Quand l'ordinateur est éteint !"); }, 1000);
                                 
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                         return;
                                 }
                                 
@@ -345,11 +319,6 @@
                                         message.channel.send("Moi j'était un youtubeur qui avait 30  millions d'abonnés j'avais 25 millions de vues par vidéo 10 million de like mais un jour un drame c'est produit : ");
                                         setTimeout(function(){ message.channel.send("Je Me Suis Reveillé !"); }, 1000);
                                 
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                         return;
                                 }
                                 
@@ -357,11 +326,6 @@
                                         message.channel.send("Aujourd'hui,notre vie ne tient souvent plus qu'à un fil.");
                                         setTimeout(function(){ message.channel.send("Celui de notre Chargeur !"); }, 1000);
                                 
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                         return;
                                 }
                                 
@@ -369,11 +333,6 @@
                                         message.channel.send("Que doit on faire  quand un geek pleure ?");
                                         setTimeout(function(){ message.channel.send("Il faut le CONSOLER !"); }, 1000);
                                 
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                         return;
                                 }
                                 
@@ -381,11 +340,6 @@
                                         message.channel.send("Un informaticien ne s'ennuie pas, ");
                                         setTimeout(function(){ message.channel.send("Il se Fichier !"); }, 1000);
                                 
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                         return;
                                 }
                                 
@@ -393,11 +347,6 @@
                                         message.channel.send("Un ordinateur c'est comme un Lama, ");
                                         setTimeout(function(){ message.channel.send("Il fait que crasher"); }, 1000);
                                 
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....      "); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....           "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                                         return;
                                 }
                                 
@@ -422,11 +371,7 @@
 
                                 message.channel.send("https://zupimages.net/up/20/32/ehyk.png");
                                 message.channel.send("Voila ! \nJe suis beau Hein :wink:");
-                                console.log("Nouveau message '" + message.content + "'");
-                                setTimeout(function(){ console.log("Preparation de la reponse automatisée...."); }, 200);
-                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....    "); }, 400);
-                                setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
+                                
                         }
 
                 });
@@ -446,11 +391,6 @@
                         ){
 
                                 message.channel.send("Salut c'est moi Tchoupi\nJe marche vers l'école\nJ'ai de nouveaux amis\nTous ensemble on rigole\nOn n'est plus des petits\nOn attend la sonnerie\nC'est fini la recré\nTous en rang s'il vous plaît\nOn vas lire et compter\nDessiner et chanter\nOn va bien s'amuser\nViens à l'école avec Tchoupi");
-                                console.log("Nouveau message '" + message.content + "'");
-                                setTimeout(function(){ console.log("Preparation de la reponse automatisée...."); }, 200);
-                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....    "); }, 400);
-                                setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                         }
                 });
 
@@ -476,12 +416,7 @@
 
                                 message.channel.send("Je parle avec la personne la plus cool du monde !");
                                 setTimeout(function(){ message.channel.send("Mais elle me repond pas donc je te parle"); }, 4000);
-                                console.log("Nouveau message '" + message.content + "'");
-                                setTimeout(function(){ console.log("Preparation de la reponse automatisée...."); }, 200);
-                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....    "); }, 400);
-                                setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
-
+                                
                         }
                 });
 
@@ -500,11 +435,6 @@
                                 
                         ){
                                 message.channel.send("Je suis ne le [  " + client.user.createdAt.getDay() + "  /  " + client.user.createdAt.getMonth() + " / " + client.user.createdAt.getFullYear() + " ] a " + client.user.createdAt.getHours() + " Heures, " + client.user.createdAt.getMinutes() + " Minutes, " + client.user.createdAt.getSeconds() + " Secondes et " + client.user.createdAt.getMilliseconds() + " Millisecondes :D")
-                                console.log("Nouveau message '" + message.content + "'");
-                                setTimeout(function(){ console.log("Preparation de la reponse automatisée...."); }, 200);
-                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....    "); }, 400);
-                                setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                         }
                 });
 
@@ -524,20 +454,10 @@
 
                                 if(RandomInt == 1){
                                         message.channel.send("Ok, Les téléphones d'aujourd'hui  ont plus de \npuissance informatique que l'Apollo Guidance \n Controller, L'ordinateur de vol du module lunaire du \n programme d'Appollo 11 ( Celui qui a permis a Neil \n Armstrong de marcher sur la Lune !!")
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée...."); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....    "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    OK"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         OK"); }, 800);
                                 }
 
                                 if(RandomInt == 2){
                                         message.channel.send("Ok, Pour les dauphins et le baleines, pas de grandes \nnuit de sommeil. Quadn c'est l'heure de dormir, \n une seule moitié de leur cerveau se repose à la \n fois. C'est comme ça qu'ils peuvent continuer a \nnager et remonter a la surface pour respirer. Mais \nce n'est pas facile ! Alors, il nagent très \ndoucement, parfois même en rond, pendant tout \nce temps.")
-                                        console.log("Nouveau message '" + message.content + "'");
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée...."); }, 200);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....    "); }, 400);
-                                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    OK"); }, 600);
-                                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         OK"); }, 800);
                                 }
                                 
                         }
@@ -560,11 +480,6 @@
                                 message.channel.send("Et c'eeeeessssssttttttttt.....")
                                 setTimeout(function(){ message.channel.send(RandomInt); }, 2000);
 
-                                console.log("Nouveau message '" + message.content + "'");
-                                setTimeout(function(){ console.log("Preparation de la reponse automatisée...."); }, 200);
-                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....    "); }, 400);
-                                setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                         }
 
 
@@ -607,6 +522,7 @@
 
 
 //#region FUNCTION
+
                 function GetRandomInt(min, max){
     
                                 min = Math.ceil(min);
@@ -615,6 +531,25 @@
                         
                 }
 
+
+                client.on('message', message => {
+                        if
+                        (
+                                !message.author.bot
+                        ){
+
+
+                                console.log("Nouveau message '" + message.content + "'");
+                                setTimeout(function(){ console.log("Preparation de la reponse automatisée...."); }, 200);
+                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....    "); }, 400);
+                                setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
+                                setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
+                        
+
+
+                        }
+                                
+                });
 
 //#endregion
 
@@ -790,7 +725,7 @@
 
                         if 
                         (
-                                message.content.toLocaleLowerCase().startsWith("!channel.create ") & !message.content === '' & !message.content.includes('ㅤ')
+                                message.content.toLocaleLowerCase().startsWith("!channel.create ") 
                         ){
                                 if 
                                 (
@@ -798,6 +733,8 @@
                                 ){
                                         message.guild.channels.create(message.content.substring(16, 10000))
                                         message.channel.send("Le salon textuel " + message.content.substring(16, 10000) + " a été crée avec succes !")
+                                        console.log(message.author.username + " Vient de créé un channel avec la commande " + message.content)
+
                                 }
                                 else
                                 {
@@ -808,6 +745,33 @@
                 });
                 
         //#endregion
+
+        //#region DELETE CHANNEL
+                
+        client.on('message', message => {
+
+                if 
+                (
+                        message.content.toLocaleLowerCase().startsWith("!channel.delete ")
+                ){
+                        if 
+                        (
+                                message.member.hasPermission('ADMINISTRATOR')
+                        ){
+                        
+                                message.guild.channels.cache.find(r => r.name === message.content.substring(16, 10000)).delete('Deleted by ' + message.author.username)
+                                message.channel.send("Le salon textuel " + message.content.substring(16, 10000) + " a été crée avec succes !")
+                                console.log(message.author.username + " Vient de supprimer un channel avec la commande " + message.content)
+                        }
+                        else
+                        {
+                                message.channel.send("Vous n'avez pas la permission de faire ca !")
+                        }
+                }
+                
+        });
+        
+//#endregion
 
 //#endregion
 
@@ -855,12 +819,28 @@
 //#region TEST
         client.on('message', message => {
                 if (message.content === '!ping') {
-                        var server = message.guild;
                         
-                        client.user.fetch('672823761723981889')
-                            .then(user => {
-                                        user.send("Bonjour a tous, Je m'appelle LeBotDeSkwal posez moi des question en commancant vos messages par '!'");
-                        })
+
+
+                        const HelpEmbed = new Discord.MessageEmbed()
+                        .setColor('#18ffff')
+                        .setAuthor('LeBotDeSkwal', 'https://cdn.discordapp.com/avatars/739794179072196704/14289541d905dca6f8f2ad6961acd82a.webp')
+                        .setTitle(`Aide LeBotDeSkwal`)
+                        .setDescription(`Bonjour, Je suis un bot, On m'appelle LeBotDeSkwal parce que..... Bah parce que j'ai été crée par Skwal t'es con ou quoi xD, 
+                        Toi, oui toi, tu peut me parler en commançant tes message par un ! 
+                        En attendant, voici ce que je peux faire :  
+                        **!help** : Affiche ce message
+                        **!ban** {user} : Banni l'utilisateur spécifié si vous en avez l'autorisation ! 
+                        **!kick** : Exclu l'utilisateur spécifié si vous en avez l'autorisation ! 
+
+                        Vous pouvez aussi me parler comme a votre ami 
+                        **Exemple** : !yo, !ca va, !tu fais quoi, !raconte moi une blague....
+                        **PS** : n'oublie pas de t'abonner a notre chaine si ce n'est pas deja fait  `)
+                        
+                        .setThumbnail("https://img.icons8.com/bubbles/2x/help.png")
+                        .setTimestamp();
+                                
+                        message.channel.send(HelpEmbed)
 
                         setTimeout(function(){ console.log("Preparation de la reponse automatisée...."); }, 200);
                         setTimeout(function(){ console.log("Envoie de la reponse automatisée....    "); }, 400);
