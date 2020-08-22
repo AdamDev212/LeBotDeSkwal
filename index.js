@@ -7,7 +7,7 @@
                         const { exit } = require('process');
                         const { Server } = require('http');
                         const client = new Discord.Client();
-                        client.login('NzM5Nzk0MTc5MDcyMTk2NzA0.XyfpBQ.HQoaOVbh-xCrjYogz1o4GwGvfuo');
+                        client.login('');
                         
 
                 //#endregion
@@ -33,10 +33,6 @@
                 //#endregion
 
 //#endregion
-
-
-
-       
 
         
 //#region MESSAGE
@@ -71,7 +67,8 @@
 
 
                         
-                        member.send(ByeEmbed);
+                        member.send(ByeEmbed)
+                                
                 });
         //#endregion 
 
@@ -154,6 +151,7 @@
                                 Toi, oui toi, tu peut me parler en commançant tes message par un ! 
                                 En attendant, voici ce que je peux faire :  
                                 **!help** : Affiche ce message
+                                **!set** : Modifier les parametres du bot !  
                                 **!ban** {user} : Banni l'utilisateur spécifié si vous en avez l'autorisation ! 
                                 **!kick** : Exclu l'utilisateur spécifié si vous en avez l'autorisation ! 
                                 
@@ -516,11 +514,6 @@
 //#endregion
 
 
-
-
-
-
-
 //#region FUNCTION
 
                 function GetRandomInt(min, max){
@@ -535,7 +528,7 @@
                 client.on('message', message => {
                         if
                         (
-                                !message.author.bot
+                                !message.author.bot & message.content.startsWith('!')
                         ){
 
 
@@ -555,6 +548,81 @@
 
 
 //#region ADMINISTRATION
+
+        //#region SET
+                client.on('message', message => {
+
+                                if 
+                                (
+                                        message.content.toLocaleLowerCase() === '!set'
+                                ){
+
+                                        
+
+
+                                        const SetEmbed = new Discord.MessageEmbed()
+                                        .setColor('#18ffff')
+                                        .setAuthor('LeBotDeSkwal', 'https://cdn.discordapp.com/avatars/739794179072196704/14289541d905dca6f8f2ad6961acd82a.webp')
+                                        .setTitle(`Parametres LeBotDeSkwal`)
+                                        .setDescription(`Cette commande sert a editer les parametre de LeBotDeSkwal, 
+                                        **!set.system {channel}** : Definire dans quel channel les messages de bienvenue / au revoir seront envoyés !
+                                        
+                                        **[Notre chaine](https://youtube.com/Skwal) ● [Notre site web](https://skwal.tk) ● [Invitez moi](https://discord.com/api/oauth2/authorize?client_id=739794179072196704&permissions=8&scope=bot)**`)
+                                        
+                                        .setThumbnail("https://img.icons8.com/bubbles/2x/help.png")
+        
+                                        .setTimestamp();
+                                        
+                                        message.channel.send(SetEmbed)
+                                        
+
+
+                                }
+
+                        })             
+                //#endregion
+
+        //#region SET.SYSTEM
+                        client.on('message', message => {
+
+                                if 
+                                (
+                                        message.content.toLocaleLowerCase().startsWith('!set.system')
+                                ){
+
+                                        
+                                        if 
+                                        (
+                                                message.member.hasPermission('ADMINISTRATOR') 
+                                        ){
+                                                
+                                                if (
+                                                        message.mentions.channels.first()
+                                                ){   
+                                                        const SystemChannelId =  message.mentions.channels.first()
+                                                        const SystemChannel = client.channels.cache.get(SystemChannelId)
+                                                        
+                                                        message.channel.send('Le channel **' + message.mentions.channels.first().name + "** a été defini comme channel des bienvenue / au revoir !")
+                                                        console.log(message.author.username + " a defini le channel " + message.mentions.channels.first().name + " comme channel system !")
+
+                                                } 
+                                                else
+                                                {
+                                                        message.reply("Vous n'avez mentionné aucun channel !");
+                                                }
+
+                                        }
+                                        else
+                                        {
+                                                message.channel.send("Vous n'avez pas la permission de faire ca !")
+                                        }
+                                        
+
+
+                                }
+
+                        })             
+        //#endregion
 
 
         //#region KICK  
@@ -586,10 +654,10 @@
                                                                                 message.reply(`${user.tag} a été exclu avec succes !`);
                                                                                 console.log(`${user.tag} a été exclu du serveur !`)
                                                                         })
-                                                                .catch(err => {
-                                                                        message.reply("Impossible d'exclure ce membre !");
-                                                                        console.error(err);
-                                                                });
+                                                                        .catch(err => {
+                                                                                message.reply("Impossible d'exclure ce membre !");
+                                                                                // console.error(err);
+                                                                        });
                                                                 } 
                                                                 else 
                                                                 {
@@ -818,34 +886,13 @@
 
 //#region TEST
         client.on('message', message => {
-                if (message.content === '!ping') {
+                if (message.content.startsWith('!ping')) {
                         
 
+                        message.channel.send('yo ' + SystemChannel)
 
-                        const HelpEmbed = new Discord.MessageEmbed()
-                        .setColor('#18ffff')
-                        .setAuthor('LeBotDeSkwal', 'https://cdn.discordapp.com/avatars/739794179072196704/14289541d905dca6f8f2ad6961acd82a.webp')
-                        .setTitle(`Aide LeBotDeSkwal`)
-                        .setDescription(`Bonjour, Je suis un bot, On m'appelle LeBotDeSkwal parce que..... Bah parce que j'ai été crée par Skwal t'es con ou quoi xD, 
-                        Toi, oui toi, tu peut me parler en commançant tes message par un ! 
-                        En attendant, voici ce que je peux faire :  
-                        **!help** : Affiche ce message
-                        **!ban** {user} : Banni l'utilisateur spécifié si vous en avez l'autorisation ! 
-                        **!kick** : Exclu l'utilisateur spécifié si vous en avez l'autorisation ! 
 
-                        Vous pouvez aussi me parler comme a votre ami 
-                        **Exemple** : !yo, !ca va, !tu fais quoi, !raconte moi une blague....
-                        **PS** : n'oublie pas de t'abonner a notre chaine si ce n'est pas deja fait  `)
-                        
-                        .setThumbnail("https://img.icons8.com/bubbles/2x/help.png")
-                        .setTimestamp();
-                                
-                        message.channel.send(HelpEmbed)
 
-                        setTimeout(function(){ console.log("Preparation de la reponse automatisée...."); }, 200);
-                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....    "); }, 400);
-                        setTimeout(function(){ console.log("Preparation de la reponse automatisée....    \33[92mOK\33[93m"); }, 600);
-                        setTimeout(function(){ console.log("Envoie de la reponse automatisée....         \33[92mOK\33[93m"); }, 800);
                 }
         });
 
