@@ -3,11 +3,17 @@
                 //#region DEMARRAGE
                         require('events').EventEmitter.defaultMaxListeners = 0;
                         const Discord = require('discord.js');
+                        const ascii = require('ascii-art');
+                        const Font = require('ascii-art-font');
                         const { setMaxListeners } = require('cluster');
-                        const { exit } = require('process');
+                        const { exit, argv } = require('process');
                         const { Server } = require('http');
+const { error } = require('console');
+const { resolveTxt } = require('dns');
                         const client = new Discord.Client();
-                        client.login('');
+                        client.login('NzM5Nzk0MTc5MDcyMTk2NzA0.XyfpBQ.VnPp5irF7ouQ0hHoueWR0YtG_XE');
+                        
+
                         
 
                 //#endregion
@@ -154,7 +160,7 @@
                                 **!set** : Modifier les parametres du bot !  
                                 **!ban** {user} : Banni l'utilisateur spécifié si vous en avez l'autorisation ! 
                                 **!kick** : Exclu l'utilisateur spécifié si vous en avez l'autorisation ! 
-                                
+                                **!ascii {text} : convertit le text specifie en [ASCII ART](https://fr.wikipedia.org/wiki/Art_ASCII)
                                 Vous pouvez aussi me parler comme a votre ami 
                                 **Exemple** : !yo, !ca va, !tu fais quoi, !raconte moi une blague....
                                 **PS** : n'oublie pas de t'abonner a notre chaine si ce n'est pas deja fait  
@@ -511,6 +517,65 @@
                 })             
         //#endregion
 
+        //#region ASCII-ART
+
+
+                client.on('message', message => {
+
+                        
+
+                        if 
+                        (
+                                message.content.toLocaleLowerCase().startsWith('!ascii')
+
+                        ){
+                               
+
+                                        if
+                                        (
+                                                message.content.substring(6, 10000)
+                                        ){
+
+                                                
+                                                ascii.font(message.content.substring(6, 10000), 'Doom', function (err, rendered) {
+                                                                                                       
+                                                        if(
+                                                                rendered.length < 1999
+                                                        ){
+                                                                if(
+                                                                
+                                                                        err
+                                                                ){
+                                                                        message.reply(err)
+                                                                }
+                                                                else{
+        
+                                                                        message.channel.send("```" + rendered + "```")
+                                                                        
+                                                                        
+                                                                }
+                                                        }
+                                                        else{
+                                                                message.reply('erreur : votre message contient trop de caractere !')
+                                                        }
+                                                       
+                                                        
+                                                        
+                                                });
+                                        }
+                                        else
+                                        {
+                                                message.reply('erreur : vous devez specifier du text pour la convertion ASCII !')
+                                        }
+
+                        
+                        }
+
+                })       
+
+
+        //#endregion
+
 //#endregion
 
 
@@ -623,7 +688,6 @@
 
                         })             
         //#endregion
-
 
         //#region KICK  
 
@@ -888,8 +952,11 @@
         client.on('message', message => {
                 if (message.content.startsWith('!ping')) {
                         
+                
 
-                        message.channel.send('yo ' + SystemChannel)
+                        
+
+                                        
 
 
 
