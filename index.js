@@ -8,10 +8,10 @@
                         const { setMaxListeners } = require('cluster');
                         const { exit, argv } = require('process');
                         const { Server } = require('http');
-const { error } = require('console');
-const { resolveTxt } = require('dns');
+                        const { error } = require('console');
+                        const { resolveTxt } = require('dns');
                         const client = new Discord.Client();
-                        client.login('NzM5Nzk0MTc5MDcyMTk2NzA0.XyfpBQ.VnPp5irF7ouQ0hHoueWR0YtG_XE');
+                        client.login('NzM5Nzk0MTc5MDcyMTk2NzA0.XyfpBQ.fTC0FpeYiJ9A9kzwQ2daeXLaIVM');
                         
 
                         
@@ -160,7 +160,7 @@ const { resolveTxt } = require('dns');
                                 **!set** : Modifier les parametres du bot !  
                                 **!ban** {user} : Banni l'utilisateur spécifié si vous en avez l'autorisation ! 
                                 **!kick** : Exclu l'utilisateur spécifié si vous en avez l'autorisation ! 
-                                **!ascii {text} : convertit le text specifie en [ASCII ART](https://fr.wikipedia.org/wiki/Art_ASCII)
+                                **!ascii** {text} : convertit le text specifie en [ASCII ART](https://fr.wikipedia.org/wiki/Art_ASCII)
                                 Vous pouvez aussi me parler comme a votre ami 
                                 **Exemple** : !yo, !ca va, !tu fais quoi, !raconte moi une blague....
                                 **PS** : n'oublie pas de t'abonner a notre chaine si ce n'est pas deja fait  
