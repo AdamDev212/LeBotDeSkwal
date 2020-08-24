@@ -10,8 +10,9 @@
                         const { Server } = require('http');
                         const { error } = require('console');
                         const { resolveTxt } = require('dns');
+const { isString } = require('util');
                         const client = new Discord.Client();
-                        client.login('NzM5Nzk0MTc5MDcyMTk2NzA0.XyfpBQ.fTC0FpeYiJ9A9kzwQ2daeXLaIVM');
+                        client.login("Don't look at my bot's token !");
                         
 
                         
@@ -905,6 +906,129 @@
         
 //#endregion
 
+        //#region CLEAR
+                
+        client.on('message', message => {
+
+                if 
+                (
+                        message.content.toLocaleLowerCase().startsWith("!clear")
+                ){
+                        if 
+                        (
+                                message.member.hasPermission('ADMINISTRATOR')
+                        ){
+                                
+                                if(
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes('a') &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'b'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'c'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'd'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'e'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'f'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'g'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'h'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'i'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'j'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'k'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'l'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'm'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'n'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'o'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'p'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'q'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'r'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        's'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        't'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'u'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'v'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'w'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'x' ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'y'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'z'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        ')'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'à'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'ç'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '_'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'è'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '-'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '('  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        "'"  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '"'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'é'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '&'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '~' ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '#'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '{'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '['  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '|'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '`'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '\\' ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '^'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '@'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        ']'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '$'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '¨'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(       'ù'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '%'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '*'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        'µ'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(       '!'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(        '§'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(       ':'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(     '/'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(     ';'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(     '.'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(     ','  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(     '?'  ) &
+                                        !message.content.substring(7, 100).toLocaleLowerCase().includes(     '=' )
+                                        
+                                ){
+
+
+                                        var ClearNumber = message.content.substring(6, 100);
+                                        var Maximum = 100;
+
+                                        if 
+                                        (
+                                                ClearNumber < Maximum
+                                        ){
+                                                async function clear() {
+                                                        message.delete();
+                                                        const fetched = await message.channel.messages.fetch({limit: message.content.substring(7, 10)})
+                                                        message.channel.bulkDelete(fetched);
+                                                }
+                                                clear();
+                                        }
+                                        else
+                                        {
+                                                message.reply('erreur : en raison des limitations de discord, vous devez specifier un nombre inférieur a 100 !')
+                                        }
+
+                                        
+                                }
+                                else
+                                {
+                                        
+                                        message.reply('erreur : vous devez specifier un nombre ( INT )')
+                                }
+
+                                
+                                        
+                                            
+                                        
+                                    
+                        }
+                        else
+                        {
+                                message.channel.send("Vous n'avez pas la permission de faire ca !")
+                        }
+                }
+                
+        });
+        
+//#endregion
+
 //#endregion
 
 
@@ -929,7 +1053,7 @@
                         message.content.includes('nique') || 
                         message.content.includes(' enfoiré')
                         ){
-
+                                message.react('😭');
                                 message.channel.send("Hé euuuuu pourquoi tu m'insulte sniffff snifff :cry:");
                         
                         }
@@ -952,7 +1076,7 @@
         client.on('message', message => {
                 if (message.content.startsWith('!ping')) {
                         
-                
+                        message.react('744172569481052211')
 
                         
 
