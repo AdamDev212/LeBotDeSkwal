@@ -10,9 +10,9 @@
                         const { Server } = require('http');
                         const { error } = require('console');
                         const { resolveTxt } = require('dns');
-const { isString } = require('util');
+                        const { isString } = require('util');
                         const client = new Discord.Client();
-                        client.login("Don't look at my bot's token !");
+                        client.login('');
                         
 
                         
@@ -988,10 +988,12 @@ const { isString } = require('util');
 
                                         var ClearNumber = message.content.substring(6, 100);
                                         var Maximum = 100;
+                                        var Minimum = 2;
 
                                         if 
                                         (
-                                                ClearNumber < Maximum
+                                                ClearNumber < Maximum &
+                                                ClearNumber > Minimum
                                         ){
                                                 async function clear() {
                                                         message.delete();
@@ -1002,7 +1004,7 @@ const { isString } = require('util');
                                         }
                                         else
                                         {
-                                                message.reply('erreur : en raison des limitations de discord, vous devez specifier un nombre inférieur a 100 !')
+                                                message.reply('erreur : en raison des limitations de discord, vous devez specifier un nombre compris entre 2 et 100 !')
                                         }
 
                                         
