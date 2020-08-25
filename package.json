@@ -1,0 +1,24 @@
+{
+  "name": "lebotdeskwal",
+  "version": "4.41.0",
+  "description": "LeBotDeSkwal You can add my bot to your server by clicking this link https://bit.ly/34uFSyW , you can join my discord serveur by clicking this link https://discord.gg/U4ryW8Y. What is my bot capable of ? You can talk to my bot like your friend, for example : !yo, !how are you, !what are u doing.... and MORE But you can also use it for moderation of your server, example: !ban user, !kick user, !clear number.... and MORE Finnaly ! I hope you like my bot and that it will be useful to you !",
+  "main": "index.js",
+  "dependencies": {
+    "ascii-art": "^2.5.0",
+    "discord.js": "^12.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkwalExe/LeBotDeSkwal.git"
+  },
+  "author": "Skwal, Leopold Koprivnik Ibghy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SkwalExe/LeBotDeSkwal/issues"
+  },
+  "homepage": "https://github.com/SkwalExe/LeBotDeSkwal#readme"
+}

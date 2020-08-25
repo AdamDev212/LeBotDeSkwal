@@ -12,7 +12,7 @@
                         const { resolveTxt } = require('dns');
                         const { isString } = require('util');
                         const client = new Discord.Client();
-                        client.login('');
+                        client.login('NzM5Nzk0MTc5MDcyMTk2NzA0.XyfpBQ.c-Itj55nOey95sMCN8sXU7MaY5U');
                         
 
                         
@@ -84,7 +84,7 @@
                         const WelcomEmbed = new Discord.MessageEmbed()
                                 .setColor('#18ffff')
                                 .setAuthor('LeBotDeSkwal', 'https://cdn.discordapp.com/avatars/739794179072196704/14289541d905dca6f8f2ad6961acd82a.webp')
-                                .setTitle('Bienvenue dans le serveur de Skwal ! <a:hi:744172079917695012> <a:dance:744172321723383838>')
+                                .setTitle(`Bienvenue dans le serveur ${member.guild.name} ! <a:hi:744172079917695012> <a:dance:744172321723383838>`)
                                 .setDescription(`${member} Vient de rejoindre le serveur ! <a:hi:744172079917695012> <a:dance:744172321723383838> `)
                                 .setThumbnail(member.user.avatarURL())
                                 .setFooter("Si tu as des question, n'hesite pas a les poser !")
