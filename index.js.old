@@ -113,12 +113,11 @@
                         if (
                                 message.content.toLocaleLowerCase()  === `${prefix}yo` & !message.author.bot  ||
                                 message.content.toLocaleLowerCase()  === `${prefix}yo le bot`  & !message.author.bot ||
-                                message.content.toLocaleLowerCase()  === `et le bot` & !message.author.bot  ||
                                 message.content.toLocaleLowerCase()  === `${prefix}wsh`  & !message.author.bot        ||
                                 message.content.toLocaleLowerCase()  === `${prefix}bonjour` & !message.author.bot  ||
                                 message.content.toLocaleLowerCase()  === `${prefix}et le bot` & !message.author.bot  ||
                                 message.content.toLocaleLowerCase()  === `${prefix}hey`  & !message.author.bot ||
-                                message.content.toLocaleLowerCase()  === `LeBotDeSkwal` & !message.author.bot  || 
+                                message.content.toLocaleLowerCase()  === `${prefix}LeBotDeSkwal` & !message.author.bot  || 
                                 message.content.toLocaleLowerCase()  === `${prefix}hé, dis` & !message.author.bot  || 
                                 message.content.toLocaleLowerCase()  === `${prefix}hé le bot!` & !message.author.bot  || 
                                 message.content.toLocaleLowerCase()  === `${prefix}wesh` & !message.author.bot || 
@@ -175,7 +174,7 @@
                                 
                                 message.channel.send(HelpEmbed)
 
-                                }
+                        }
                 });
 
         

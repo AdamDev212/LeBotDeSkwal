@@ -73,4 +73,85 @@ client.on('message', message => {
 	}
 });
 
+client.on('guildMemberRemove', member => {
+
+
+	const ByeEmbed = new Discord.MessageEmbed()
+			.setColor('#18ffff')
+			.setAuthor('LeBotDeSkwal', 'https://cdn.discordapp.com/avatars/739794179072196704/14289541d905dca6f8f2ad6961acd82a.webp')
+			.setTitle(':sneezing_face: Bon depart, tu nous manqueras :sob::cry:')
+			.setDescription(`:sneezing_face: ${member} Vient de QUITTER le serveur ! :sob::cry: `)
+			.setThumbnail(member.user.avatarURL())
+			.setTimestamp();
+			
+
+
+
+	const channel = member.guild.channels.cache.find(ch => ch.name === '『👋』𝗠𝗲𝗺𝗯𝗿𝗲𝘀');
+	channel.send(ByeEmbed);
+
+
+
+	
+	member.send(ByeEmbed)
+			
+});
+
+client.on('guildMemberAdd', member => {
+	const WelcomEmbed = new Discord.MessageEmbed()
+			.setColor('#18ffff')
+			.setAuthor('LeBotDeSkwal', 'https://cdn.discordapp.com/avatars/739794179072196704/14289541d905dca6f8f2ad6961acd82a.webp')
+			.setTitle(`Bienvenue dans le serveur ${member.guild.name} ! <a:hi:744172079917695012> <a:dance:744172321723383838>`)
+			.setDescription(`${member} Vient de rejoindre le serveur ! <a:hi:744172079917695012> <a:dance:744172321723383838> `)
+			.setThumbnail(member.user.avatarURL())
+			.setFooter("Si tu as des question, n'hesite pas a les poser !")
+			.setTimestamp();
+			
+
+
+
+	const channel = member.guild.channels.cache.find(ch => ch.name === '『👋』𝗠𝗲𝗺𝗯𝗿𝗲𝘀');
+	channel.send(WelcomEmbed);
+
+
+
+	
+	member.send(WelcomEmbed);
+});
+
+client.on('message', message => {
+
+	if(!message.author.bot & message.content.startsWith(prefix)){
+			if ( message.content.includes('merde') || 
+			message.content.includes(' moche') || 
+			message.content.includes(' gueule') || 
+			message.content.endsWith(' con') ||
+			message.content.includes('putain') || 
+			message.content.includes('pute') || 
+			message.content.includes('salope') || 
+			message.content.includes('tg') || 
+			message.content.includes('batard') || 
+			message.content.includes(' con ') || 
+			message.content.includes('connard') || 
+			message.content.includes('Connard') || 
+			message.content.includes('enculer') || 
+			message.content.includes('Enculer') || 
+			message.content.includes('nique') || 
+			message.content.includes(' enfoiré')
+			){
+					message.react('😭');
+					message.channel.send("Hé euuuuu pourquoi tu m'insulte sniffff snifff :cry:");
+                
+			}
+
+			
+			if (message.content ===`${prefix}encore`                        ){
+					message.channel.send("@" + message.author.username + " Encore Quoi ?");
+                
+			}
+	}
+	
+	
+});
+
 client.login(token);

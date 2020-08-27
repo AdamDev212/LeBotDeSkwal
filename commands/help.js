@@ -4,7 +4,6 @@ module.exports = {
 	name: 'help',
 	description: "Envoie un message d'aide !",
 	aliases: ['commands', 'info', 'infos'],
-	usage: '!help',
 	cooldown: 1,
 	execute(message, args) {
 		const data = [];
