@@ -1,14 +1,8 @@
 module.exports = {
-    name: 'name',
-    execute(message, args){
-        const Discord = require('discord.js');
-        const fs = require('fs');
-        const { prefix, token } = require('../config.json');
-
-        const client = new Discord.Client();
-
-
-        
-    }
+	name: '',
+	description: '',
+	aliases: [],
+	execute(message, args) {
+		
+	},
 };
-

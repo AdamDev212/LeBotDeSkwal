@@ -1,3 +1,48 @@
+//#region DEMARRAGE
+
+                //#region DEMARRAGE
+                        require('events').EventEmitter.defaultMaxListeners = 0;
+                        const Discord = require('discord.js');
+                        const ascii = require('ascii-art');
+                        const Font = require('ascii-art-font');
+                        const { prefix, token } = require('./config.json');
+                        const { setMaxListeners } = require('cluster');
+                        const { exit, argv, prependListener } = require('process');
+                        const { Server } = require('http');
+                        const { error } = require('console');
+                        const { resolveTxt } = require('dns');
+                        const { isString } = require('util');
+                        const client = new Discord.Client();
+                        client.login(token);
+                        
+
+                        
+
+                //#endregion
+
+                //#region CONSOLE.LOG 
+                        console.clear();
+                        console.log('Lancement du bot....');
+                        setTimeout(function(){ console.log('Demarrage du client....               '); },  800);
+                        setTimeout(function(){ console.log('Parametrage des listener....          '); }, 1000);
+                        setTimeout(function(){ console.log('Importation du module Discordjs....   '); }, 1200);
+                        setTimeout(function(){ console.log('Connection du client....              '); }, 1400);
+                        setTimeout(function(){ console.log('Parametrage des listener....        \33[92mOK\33[93m'); }, 1600);
+                        setTimeout(function(){ console.log('Importation du module Discordjs.... \33[92mOK\33[93m'); }, 1800);
+                        setTimeout(function(){ console.log('Connection du client....            \33[92mOK\33[93m'); }, 2000);
+                        setTimeout(function(){ console.log('Lancement du bot....                \33[92mOK\33[93m'); }, 2200);
+                        setTimeout(function(){ console.log('Client operationnel.                \33[92mOK\33[93m'); }, 2400);
+                //#endregion
+
+                //#region BOT READY
+                        client.on('ready', () => {
+                                client.user.setActivity('Visual Studio Code', { type: 'PLAYING' });
+                        });
+                //#endregion
+
+//#endregion
+
+        
 //#region MESSAGE
 
         //#region MEMBER GET BANNED
@@ -95,7 +140,46 @@
 
         //#endregion
 
+        //#region HELP
 
+
+                client.on('message', message => {
+
+                        if (
+                                message.content.toLocaleLowerCase() === `${prefix}info` ||
+                                message.content.toLocaleLowerCase() === `${prefix}help` ||
+                                message.content.toLocaleLowerCase() === `${prefix}infos` 
+                        ){         
+
+                                const HelpEmbed = new Discord.MessageEmbed()
+                                .setColor('#18ffff')
+                                .setAuthor('LeBotDeSkwal', 'https://cdn.discordapp.com/avatars/739794179072196704/14289541d905dca6f8f2ad6961acd82a.webp')
+                                .setTitle(`Aide LeBotDeSkwal`)
+                                .setDescription(`Bonjour, Je suis un bot, On m'appelle LeBotDeSkwal parce que..... Bah parce que j'ai été crée par Skwal t'es con ou quoi xD, 
+                                Toi, oui toi, tu peut me parler en commançant tes message par un ${prefix} 
+                                En attendant, voici ce que je peux faire :  
+                                **${prefix}help** : Affiche ce message
+                                **${prefix}set** : Modifier les parametres du bot !  
+                                **${prefix}ban** {user} : Banni l'utilisateur spécifié si vous en avez l'autorisation ! 
+                                **${prefix}kick** : Exclu l'utilisateur spécifié si vous en avez l'autorisation ! 
+                                **${prefix}ascii** {text} : convertit le text specifie en [ASCII ART](https://fr.wikipedia.org/wiki/Art_ASCII)
+                                Vous pouvez aussi me parler comme a votre ami 
+                                **Exemple** : ${prefix}yo, ${prefix}ca va, ${prefix}tu fais quoi, ${prefix}raconte moi une blague....
+                                **PS** : n'oublie pas de t'abonner a notre chaine si ce n'est pas deja fait  
+                                
+                                **[Notre chaine](https://youtube.com/Skwal) ● [Notre site web](https://skwal.tk) ● [Invitez moi](https://discord.com/api/oauth2/authorize?client_id=739794179072196704&permissions=8&scope=bot)**`)
+                                
+                                .setThumbnail("https://img.icons8.com/bubbles/2x/help.png")
+
+                                .setTimestamp();
+                                
+                                message.channel.send(HelpEmbed)
+
+                                }
+                });
+
+        
+        //#endregion
 
         //#region CA VA 
 
@@ -608,6 +692,63 @@
                         })             
         //#endregion
 
+        //#region KICK  
+
+                        client.on('message', message => {
+                                if (!message.guild) return;
+                                if(
+                                        message.content.toLocaleLowerCase().startsWith(`${prefix}kick`)
+
+                                ){
+                                        if 
+                                        (
+                                                message.member.hasPermission('ADMINISTRATOR') 
+
+                                                
+                                        ){
+                                                const user = message.mentions.users.first();
+                                                if (
+                                                        user
+                                                ){
+                                                        const member = message.guild.member(user);
+                                                        if (
+                                                                member
+                                                        ){
+                                        
+                                                                member
+                                                                        .kick()
+                                                                        .then(() => {
+                                                                                message.reply(`${user.tag} a été exclu avec succes !`);
+                                                                                console.log(`${user.tag} a été exclu du serveur !`)
+                                                                        })
+                                                                        .catch(err => {
+                                                                                message.reply("Impossible d'exclure ce membre !");
+                                                                                // console.error(err);
+                                                                        });
+                                                                } 
+                                                                else 
+                                                                {
+                                                                        message.reply("L'utilisateur n'est pas present dans le serveur !");
+                                                                }
+                                                                } 
+                                                                else 
+                                                                {
+                                                                        message.reply("Vous n'avez mentionné aucun utilisateur a exclure !");
+                                                                }
+                                        }
+                                        else
+                                        {
+                                                message.channel.send("Vous n'avez pas la permission de faire ca !")
+                                        }
+                                }
+                                
+                                
+                                
+                        });
+
+                
+        //#endregion
+ 
         //#region BAN  
 
                 client.on('message', message => {
@@ -887,6 +1028,23 @@
 //#endregion
 
 
+//#region TEST
+        client.on('message', message => {
+                if (message.content.startsWith(`${prefix}ping`)) {
+                        
+                        message.react('744172569481052211')
+
+                        
+
+                                        
+
+
+
+                }
+        });
+
+
+//#endregion
 
 
  

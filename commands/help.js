@@ -1,13 +1,16 @@
+const { prefix } = require('../config.json');
+
 module.exports = {
-    name: 'help',
-    execute(message){
-        const Discord = require('discord.js');
-        const fs = require('fs');
-        const { prefix, token } = require('../config.json');
-
-        const client = new Discord.Client();
-
-        const HelpEmbed = new Discord.MessageEmbed()
+	name: 'help',
+	description: "Envoie un message d'aide !",
+	aliases: ['commands', 'info', 'infos'],
+	usage: '!help',
+	cooldown: 1,
+	execute(message, args) {
+		const data = [];
+		const { commands } = message.client;
+		const Discord = require('discord.js');
+		const HelpEmbed = new Discord.MessageEmbed()
                                 .setColor('#18ffff')
                                 .setAuthor('LeBotDeSkwal', 'https://cdn.discordapp.com/avatars/739794179072196704/14289541d905dca6f8f2ad6961acd82a.webp')
                                 .setTitle(`Aide LeBotDeSkwal`)
@@ -30,6 +33,5 @@ module.exports = {
                                 .setTimestamp();
                                 
                                 message.channel.send(HelpEmbed)
-    }
+	},
 };
-
