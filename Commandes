@@ -1,24 +1,23 @@
-yo [✘]
+-----ADMINISTRATION-----
+
 ping [✔]
 help [✔]
-ca va [✘]
-blague [✘]
-photo [✘]
-tchoupi [✘]
-tfq [✘]
-age [✘]
-surprend moi [✘]
-lance un de [✘]
-repete [✘]
-ascii art [✘]
-kick [✘]
-ban [✘]
 create channel [✘]
 delete channel [✘]
+kick [✘]
+ban [✘]
 clear [✘]
 
+----------TALK----------
 
-
-
-
-
+age [✔]
+surprend moi [✔]
+lance un de [✔]
+repete [✔]
+yo [✔]
+ascii art [✔]
+ca va [✔]
+blague [✔]
+photo [✔]
+tchoupi [✔]
+tfq [✔]

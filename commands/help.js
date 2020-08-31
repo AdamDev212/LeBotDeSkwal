@@ -1,12 +1,12 @@
-const { prefix } = require('../config.json');
-
 module.exports = {
 	name: 'help',
 	description: "Envoie un message d'aide !",
 	aliases: ['commands', 'info', 'infos'],
 	cooldown: 1,
 	execute(message, args) {
-		const data = [];
+        const data = [];
+        const { prefix } = require('../config.json');
+
 		const { commands } = message.client;
 		const Discord = require('discord.js');
 		const HelpEmbed = new Discord.MessageEmbed()
@@ -17,7 +17,6 @@ module.exports = {
                                 Toi, oui toi, tu peut me parler en commançant tes message par un ${prefix} 
                                 En attendant, voici ce que je peux faire :  
                                 **${prefix}help** : Affiche ce message
-                                **${prefix}set** : Modifier les parametres du bot !  
                                 **${prefix}ban** {user} : Banni l'utilisateur spécifié si vous en avez l'autorisation ! 
                                 **${prefix}kick** : Exclu l'utilisateur spécifié si vous en avez l'autorisation ! 
                                 **${prefix}ascii** {text} : convertit le text specifie en [ASCII ART](https://fr.wikipedia.org/wiki/Art_ASCII)
