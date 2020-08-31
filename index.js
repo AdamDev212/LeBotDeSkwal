@@ -94,8 +94,11 @@ client.on('guildMemberRemove', member => {
 
 
 
-	
-	member.send(ByeEmbed)
+	try {
+		member.send(ByeEmbed)
+	} catch (error) {
+		console.log("\33[91m Impossible d'envoyer un message a l'utilisateur ! \nDetails : ", error)
+	}
 			
 });
 
@@ -117,8 +120,11 @@ client.on('guildMemberAdd', member => {
 
 
 
-	
-	member.send(WelcomEmbed);
+	try {
+		member.send(WelcomEmbed);
+	} catch (error) {
+		console.log("\33[91m Impossible d'envoyer un message a l'utilisateur ! \nDetails : ", error)
+	}
 });
 
 client.on('message', message => {
