@@ -1,7 +1,7 @@
 // Integralement codé par Skwal, Leopold Koprivnik Ibghy
 
 module.exports = {
-	name: '',
+	name: 'ban',
 	description: '',
 	aliases: [],
 	execute(message, args) {
