@@ -4,7 +4,7 @@ ping [✔]
 help [✔]
 create channel [✘]
 delete channel [✘]
-kick [✘]
+kick [✔]
 ban [✘]
 clear [✔]
 

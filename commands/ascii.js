@@ -1,5 +1,5 @@
 module.exports = {
-	name: '',
+	name: 'ascii',
 	description: '',
 	aliases: [],
 	execute(message, args) {

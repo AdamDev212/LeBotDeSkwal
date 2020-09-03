@@ -27,6 +27,12 @@ client.once('ready', () => { // quand le bot est pret :
 
 client.on('message', message => { // quand il y a un message alors :
 	
+
+
+	if(!message.channel.guild) return message.channel.send("Je suis desole maisssss.... je ne paut pas te parler ici, seulement sur un serveur !") // si la conversation se passe dans un DM alors on annul
+
+
+
 	try { // essaie :
 
 
