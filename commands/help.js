@@ -17,6 +17,7 @@ module.exports = {
                                 Toi, oui toi, tu peut me parler en commançant tes message par un ${prefix} 
                                 En attendant, voici ce que je peux faire :  
                                 **${prefix}help** : Affiche ce message
+                                **${prefix}ascii **{text} : genere le text spécifié en art ascii !
                                 **${prefix}ban** {user} : Banni l'utilisateur spécifié si vous en avez l'autorisation ! 
                                 **${prefix}kick** : Exclu l'utilisateur spécifié si vous en avez l'autorisation ! 
                                 **${prefix}ascii** {text} : convertit le text specifie en [ASCII ART](https://fr.wikipedia.org/wiki/Art_ASCII)
