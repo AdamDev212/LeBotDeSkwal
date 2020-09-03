@@ -429,60 +429,11 @@ module.exports = {
                                              
                         //#endregion
 
-                        //#region ASCII-ART
-
-
-                                        if 
-                                        (
-                                                message.content.toLocaleLowerCase().startsWith(`${prefix}ascii`)
-
-                                        ){
-                                        
-
-                                                        if
-                                                        (
-                                                                message.content.substring(6, 10000)
-                                                        ){
-
-                                                                
-                                                                ascii.font(message.content.substring(6, 10000), 'Doom', function (err, rendered) {
-                                                                                                                
-                                                                        if(
-                                                                                rendered.length < 1999
-                                                                        ){
-                                                                                if(
-                                                                                
-                                                                                        err
-                                                                                ){
-                                                                                        message.reply(err)
-                                                                                }
-                                                                                else{
-
-                                                                                        message.channel.send("```" + rendered + "```")
-                                                                                        
-                                                                                        
-                                                                                }
-                                                                        }
-                                                                        else{
-                                                                                message.reply('erreur : votre message contient trop de caractere !')
-                                                                        }
-                                                                
-                                                                        
-                                                                        
-                                                                });
-                                                        }
-                                                        else
-                                                        {
-                                                                message.reply('erreur : vous devez specifier du text pour la convertion ASCII !')
-                                                        }
-
-                                        
-                                        }
+                                
 
                                     
 
 
-//#endregion
 
 
 
