@@ -1,3 +1,5 @@
+// Integralement codé par Skwal, Leopold Koprivnik Ibghy
+
 module.exports = {
 	name: 'clear',
 	description: 'Clear up to 99 messages.',

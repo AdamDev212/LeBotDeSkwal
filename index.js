@@ -1,3 +1,5 @@
+// Integralement codé par Skwal, Leopold Koprivnik Ibghy
+
 const fs = require('fs'); // importation du module 'fs'
 const Discord = require('discord.js'); // importation du module discord.js
 const botjs = require(`./bot.js`); // importation de bot.js

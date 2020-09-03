@@ -1,3 +1,5 @@
+// Integralement codé par Skwal, Leopold Koprivnik Ibghy
+
 module.exports = {
 	name: 'botjs',
 	description: 'System permetant au bot de parler au utilisateur comme a son ami',

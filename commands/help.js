@@ -1,3 +1,5 @@
+// Integralement codé par Skwal, Leopold Koprivnik Ibghy
+
 module.exports = {
 	name: 'help',
 	description: "Envoie un message d'aide !",

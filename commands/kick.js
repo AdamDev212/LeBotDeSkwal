@@ -1,3 +1,5 @@
+// Integralement codé par Skwal, Leopold Koprivnik Ibghy
+
 module.exports = {
 	name: 'kick',
 	description: 'kick the first mentionned user of the message from the server',
