@@ -31,7 +31,7 @@ client.on('message', message => { // quand il y a un message alors :
 	
 
 
-	if(!message.channel.guild & message.author.bot ) return message.channel.send("Je suis desole maisssss.... je ne paut pas te parler ici, seulement sur un serveur !") // si la conversation se passe dans un DM alors on annul
+	if(!message.channel.guild & !message.author.bot ) return message.channel.send("Je suis desole maisssss.... je ne paut pas te parler ici, seulement sur un serveur !") // si la conversation se passe dans un DM alors on annul
 
 
 
