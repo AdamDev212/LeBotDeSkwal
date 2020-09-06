@@ -35,7 +35,7 @@ module.exports = {
                             if (
                                     member
                             ){
-            
+
                                     member
                                             .ban()
                                             .then(() => {
@@ -51,11 +51,11 @@ module.exports = {
                                     {
                                             message.reply("L'utilisateur n'est pas present dans le serveur !");
                                     }
-                                    } 
-                                    else 
-                                    {
+                                } 
+                                else 
+                                {
                                             message.reply("Vous n'avez mentionné aucun utilisateur a bannir !");
-                                    }
+                                }
             }
             else
             {

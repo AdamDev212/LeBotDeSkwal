@@ -21,79 +21,49 @@ for (const file of commandFiles) {
 const cooldowns = new Discord.Collection();
 
 client.once('ready', () => { // quand le bot est pret :
+
 	console.clear() // effacer l'ecran de la console 
 	console.log('\33[92mClient ready at \33[94m' + client.user.tag); // on imprinte 'client ready at client.user.tag' dans la console 
     client.user.setActivity('Visual Studio Code', { type: 'PLAYING' }); // on definie le statut du bot 
 });
 
 
-client.on('message', message => { // quand il y a un message alors :
+client.on('message', (message) =>{ // quand il y a un message alors :
+	
 	
 
-
-	if(!message.channel.guild & !message.author.bot ) return message.channel.send("Je suis desole maisssss.... je ne paut pas te parler ici, seulement sur un serveur !") // si la conversation se passe dans un DM alors on annul
-
-
-
-	try { // essaie :
+	if(!message.channel.guild) return message.channel.send("Je suis desole maisssss.... je ne paut pas te parler ici, seulement sur un serveur !") // si la conversation se passe dans un DM alors on annul
+	if (!message.content.startsWith(prefix) || message.author.bot) return; // si le message ne commence pas par un point d'exclamation ou que l'hauteur du message est un bot alors on annule 
+	console.log('\33[92mNouveau message :\33[94m', message.content.toLocaleLowerCase()) // on empreinte ce que contient le message dans la console 
 
 
-		if (!message.content.startsWith(prefix) || message.author.bot) return; // si le message ne commence pas par un point d'exclamation ou que l'hauteur du message est un bot alors on annule 
-		
-		console.log('\33[92mNouveau message :\33[94m', message.content.toLocaleLowerCase()) // on empreinte ce que contient le message dans la console 
-		const args = message.content.slice(prefix.length).trim().split(/ +/); // on defini args  
+	botjs.execute(message, client); // on execute bot.js 
+
+	
+	const args = message.content.slice(prefix.length).trim().split(/ +/); // on defini args  
 		const commandName = args.shift().toLowerCase(); //
-		botjs.execute(message, client); // on execute bot.js 
 		
 		const command = client.commands.get(commandName)
 			|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 		
+			
 		if (!command) return; 
 
-		if (command.guildOnly && message.channel.type === 'dm') {
-			return message.reply('erreur : je ne peux pas faire ca en message privé !');
-		}
 
-		if (command.args && !args.length) {
-			let reply = `Vous n'avez spécifié aucun arguments, ${message.author}!`;
-
-			if (command.usage) {
-				reply += `\nVoici la syntaxe de la commande : \`${prefix}${command.name} ${command.usage}\``;
-			}
-
-			return message.channel.send(reply);
-		}
-
-		if (!cooldowns.has(command.name)) {
-			cooldowns.set(command.name, new Discord.Collection());
-		}
-
-		const now = Date.now();
-		const timestamps = cooldowns.get(command.name);
-		const cooldownAmount = (command.cooldown || 1) * 1000;
-
-		if (timestamps.has(message.author.id)) {
-			const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
-
-			if (now < expirationTime) {
-				const timeLeft = (expirationTime - now) / 1000;
-				return message.reply(`Veuillez attendre ${timeLeft.toFixed(1)} secondes de d'utiliser la commande \`${command.name}\` a nouveau.`);
-			}
-		}
-
-		timestamps.set(message.author.id, now);
-		setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
 		command.execute(message, args);
 
 
-	} catch (error) {
-
-		console.error(error);
-		message.reply('Une erreur est survenue ! details : \n' + error);
-
-	}
 });
+
+
+
+
+
+
+
+
+
 
 client.on('guildMemberRemove', member => {
 

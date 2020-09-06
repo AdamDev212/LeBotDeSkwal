@@ -5,10 +5,9 @@ module.exports = {
 	description: 'System permetant au bot de parler au utilisateur comme a son ami',
 	aliases: [],
 	execute(message, client) {
-		const Discord = require('discord.js');
-		const ascii = require('ascii-art');
+
+                const ascii = require('ascii-art');
 		const { prefix } = require('./config.json');
-                const fs = require('fs');
 		function GetRandomInt(min, max){
                         
 			min = Math.ceil(min);
@@ -16,7 +15,6 @@ module.exports = {
 			RandomInt =  Math.floor(Math.random() * (max - min +1)) + min;
                         
 		}
-
 
 
 

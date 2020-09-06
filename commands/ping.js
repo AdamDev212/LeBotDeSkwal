@@ -6,7 +6,7 @@ module.exports = {
 	cooldown: 0,
 	execute(message, client) {
 
-		message.channel.send('Pong !');
+		message.channel.send("gt" + client.commands );
 		
 
 	},

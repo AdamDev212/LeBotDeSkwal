@@ -18,11 +18,10 @@ module.exports = {
 	
         }
         if(message.content.startsWith("!dis") || message.content.startsWith('!dit')) word = message.content.substring(4, 10000)
-        if(message.content.startsWith('!repete')) word = message.channel.send(message.content.substring(7, 10000));
+        if(message.content.startsWith('!repete')) word = message.content.substring(7, 10000)
 
 
 
-        message.delete()
         message.channel.send(word)
 
 
