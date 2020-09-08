@@ -21,7 +21,9 @@ module.exports = {
         if(message.content.startsWith('!repete')) word = message.content.substring(7, 10000)
 
 
-
+		if(message.author.id == "672823761723981889") {
+			message.delete()
+		}
         message.channel.send(word)
 
 
