@@ -3,7 +3,7 @@
 const fs = require('fs'); // importation du module 'fs'
 const Discord = require('discord.js'); // importation du module discord.js
 const botjs = require(`./bot.js`); // importation de bot.js
-
+const insult_detection = require('./insult_detection.js')
 
 const { prefix, token } = require('./config.json'); // importation du prefix et du token a partir du fichier config.json
 const client = new Discord.Client(); // création d'une constante client qui est egale a new Discord.Client()
@@ -38,7 +38,7 @@ client.on('message', (message) =>{ // quand il y a un message alors :
 
 
 	botjs.execute(message, client); // on execute bot.js 
-
+	insult_detection.execute(message, client);
 	
 	const args = message.content.slice(prefix.length).trim().split(/ +/); // on defini args  
 		const commandName = args.shift().toLowerCase(); //
@@ -114,36 +114,4 @@ client.on('guildMemberAdd', member => {
 	}
 });
 
-client.on('message', message => {
 
-	if(!message.author.bot & message.content.startsWith(prefix) & !message.content.startsWith('!dis') & !message.content.startsWith('!repete')){
-			if ( message.content.toLowerCase().includes('merde') || // si le message contient : merde
-			message.content.toLowerCase().includes(' moche') ||  // si le message contient : moche
-			message.content.toLowerCase().includes(' gueule') ||  // si le message contient : gueule
-			message.content.toLowerCase().endsWith(' con') || // si le message contient : con
-			message.content.toLowerCase().includes('putain') ||  // si le message contient : putain
-			message.content.toLowerCase().includes('pute') ||  // si le message contient : pute
-			message.content.toLowerCase().includes('salope') ||  // si le message contient : salope
-			message.content.toLowerCase().includes('tg') ||  // si le message contient : tg
-			message.content.toLowerCase().includes('batard') ||  // si le message contient : batard
-			message.content.toLowerCase().includes(' con ') ||  // si le message contient : con
-			message.content.toLowerCase().includes('connard') ||  // si le message contient : connard
-			message.content.toLowerCase().includes('enculer') ||  // si le message contient : enculer
-			message.content.toLowerCase().includes('nique') ||  // si le message contient : nique
-			message.content.toLowerCase().includes(' enfoiré') // si le message contient : enfoiré
-			){
-
-					message.react('😭'); // le bot reagis au message par 😭
-					message.channel.send("Hé euuuuu pourquoi tu m'insulte sniffff snifff :cry:"); // le bot envoie "Hé euuuuu pourquoi tu m'insulte sniffff snifff :cry:"
-                
-			}
-
-
-			if (message.content ===`${prefix}encore`                        ){
-					message.channel.send("@" + message.author.username + " Encore Quoi ?");
-                
-			}
-	}
-	
-	
-});
