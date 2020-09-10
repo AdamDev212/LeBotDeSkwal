@@ -16,6 +16,7 @@ module.exports = {
                                 .setAuthor('LeBotDeSkwal', 'https://cdn.discordapp.com/avatars/739794179072196704/14289541d905dca6f8f2ad6961acd82a.webp')
                                 .setTitle(`Aide LeBotDeSkwal`)
                                 .setDescription(`Bonjour, Je suis un bot, On m'appelle LeBotDeSkwal parce que..... Bah parce que j'ai été crée par Skwal t'es con ou quoi xD, 
+                                Je suis un bot open source, cela signifie que tu peux aller jeter un coup d'oeil a mon code [ici](https://github.com/SkwalExe/LeBotDeSkwal)
                                 Toi, oui toi, tu peut me parler en commançant tes message par un ${prefix} 
                                 En attendant, voici ce que je peux faire :  
                                 **${prefix}help** : Affiche ce message

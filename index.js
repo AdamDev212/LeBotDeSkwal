@@ -30,7 +30,6 @@ client.once('ready', () => { // quand le bot est pret :
 
 client.on('message', (message) =>{ // quand il y a un message alors :
 	
-	
 
 	if(!message.channel.guild) return message.channel.send("Je suis desole maisssss.... je ne paut pas te parler ici, seulement sur un serveur !") // si la conversation se passe dans un DM alors on annul
 	if (!message.content.startsWith(prefix) || message.author.bot) return; // si le message ne commence pas par un point d'exclamation ou que l'hauteur du message est un bot alors on annule 
