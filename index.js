@@ -21,7 +21,6 @@ for (const file of commandFiles) {
 const cooldowns = new Discord.Collection();
 
 client.once('ready', () => { // quand le bot est pret :
-	fs.writeFileSync('./configuration/file.jspn', "serzerzer")
 	console.clear() // effacer l'ecran de la console 
 	console.log('\33[92mClient ready at \33[94m' + client.user.tag); // on imprinte 'client ready at client.user.tag' dans la console 
     client.user.setActivity('Visual Studio Code', { type: 'PLAYING' }); // on definie le statut du bot 
@@ -29,8 +28,7 @@ client.once('ready', () => { // quand le bot est pret :
 
 
 client.on('message', (message) =>{ // quand il y a un message alors :
-
-
+	
 
 	if(!message.channel.guild & !message.author.bot) {
 		console.log('\33[92mNouveau message :\33[94m', message.content.toLocaleLowerCase()) // on empreinte ce que contient le message dans la console 
@@ -93,8 +91,8 @@ client.on('guildMemberRemove', member => {
 			
 
 
-
-	const channel = member.guild.channels.cache.find(ch => ch.name === '『👋』𝗠𝗲𝗺𝗯𝗿𝗲𝘀');
+	delete require.cache[require.resolve(`./configuration/${member.guild.id}`)]
+	const channel = member.guild.channels.cache.find(ch => ch.id === require(`./configuration/${member.guild.id}`).welcome);
 	channel.send(ByeEmbed);
 
 
@@ -116,8 +114,8 @@ client.on('guildMemberAdd', member => {
 			
 
 
-
-	const channel = member.guild.channels.cache.find(ch => ch.name === '『👋』𝗠𝗲𝗺𝗯𝗿𝗲𝘀');
+	delete require.cache[require.resolve(`./configuration/${member.guild.id}`)]
+	const channel = member.guild.channels.cache.find(ch => ch.id === require(`./configuration/${member.guild.id}`).welcome);
 	channel.send(WelcomEmbed);
 
 
