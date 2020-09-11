@@ -21,7 +21,7 @@ for (const file of commandFiles) {
 const cooldowns = new Discord.Collection();
 
 client.once('ready', () => { // quand le bot est pret :
-
+	fs.writeFileSync('./configuration/file.jspn', "serzerzer")
 	console.clear() // effacer l'ecran de la console 
 	console.log('\33[92mClient ready at \33[94m' + client.user.tag); // on imprinte 'client ready at client.user.tag' dans la console 
     client.user.setActivity('Visual Studio Code', { type: 'PLAYING' }); // on definie le statut du bot 
@@ -35,7 +35,7 @@ client.on('message', (message) =>{ // quand il y a un message alors :
 	if(!message.channel.guild & !message.author.bot) {
 		console.log('\33[92mNouveau message :\33[94m', message.content.toLocaleLowerCase()) // on empreinte ce que contient le message dans la console 
 
-		GetRandomInt(1, 6)
+		GetRandomInt(1, 7)
 		
 		if( RandomInt == 1) Answer = "QnJhdm8sIHR1IHZpZW5zIGRlIHBlcmRyZSAyIG1pbnV0ZXMgZGUgdmllLg=="
 		if( RandomInt == 2) Answer = "PTDR T KI ?"
@@ -43,6 +43,9 @@ client.on('message', (message) =>{ // quand il y a un message alors :
 		if( RandomInt == 4) Answer = "Raconte pas ta vie !"
 		if( RandomInt == 5) Answer = "J'ai été conçu pour t'ignorer... mince.		"
 		if( RandomInt == 6) Answer = "Ce que tu dis est très intéressant, et cette phrase est un mensonge.		"
+		if( RandomInt == 7) Answer = "Les humains parlent beaucoup...."
+		console.log("\33[92mEnvoie de la reponse : \33[94m" + Answer) // on empreinte ce que contient le message dans la console 
+
 		return message.channel.send(Answer); // si la conversation se passe dans un DM alors on annule
 	}
 		if (!message.content.startsWith(prefix) || message.author.bot) return; // si le message ne commence pas par un point d'exclamation ou que l'hauteur du message est un bot alors on annule 

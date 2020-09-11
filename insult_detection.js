@@ -25,6 +25,7 @@ module.exports = {
 			message.content.toLowerCase().endsWith(' con') || // si le message contient : con
 			message.content.toLowerCase().includes('putain') ||  // si le message contient : putain
 			message.content.toLowerCase().includes('pute') ||  // si le message contient : pute
+			message.content.toLowerCase().includes('fdp') ||  // si le message contient : fdp
 			message.content.toLowerCase().includes('salope') ||  // si le message contient : salope
 			message.content.toLowerCase().includes('tg') ||  // si le message contient : tg
 			message.content.toLowerCase().includes('batard') ||  // si le message contient : batard
