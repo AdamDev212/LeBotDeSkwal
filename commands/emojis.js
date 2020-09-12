@@ -20,9 +20,10 @@ module.exports = {
 
 
         
-        if (message.guild.emojis.length === 0) {
+        if (message.guild.emojis.cache.size == 0){
 
-            message.reply("Ce serveur de ne possede aucun emojis !")
+            message.reply("Ce serveur de ne possede aucun emojis !");
+        
         }else{
 
         

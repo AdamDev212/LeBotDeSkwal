@@ -63,6 +63,20 @@ module.exports = {
 
                         //#endregion
 
+                        //#region PAS DROLE
+                                        if(
+                                                message.content.toLocaleLowerCase().startsWith("!tes pas drôles") ||
+                                                message.content.toLocaleLowerCase().startsWith("!tes pas drole") ||
+                                                message.content.toLocaleLowerCase().startsWith("!te pas drole") ||
+                                                message.content.toLocaleLowerCase().startsWith("!te pa drole") ||
+                                                message.content.toLocaleLowerCase().startsWith("!t pa drole") ||
+                                                message.content.toLocaleLowerCase().startsWith("!t pas drole") ||
+                                                message.content.toLocaleLowerCase().startsWith("!tes pas droles")
+                                        ){
+                                                message.reply('Toi même sale Caca !')
+                                        }
+                        //#endregion
+
                         //#region CA VA 
 
 

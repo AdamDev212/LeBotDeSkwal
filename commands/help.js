@@ -19,6 +19,9 @@ module.exports = {
                                 Je suis un bot open source, cela signifie que tu peux aller jeter un coup d'oeil a mon code [ici](https://github.com/SkwalExe/LeBotDeSkwal)
                                 Toi, oui toi, tu peut me parler en commançant tes message par un ${prefix} 
                                 En attendant, voici ce que je peux faire :  
+                                **${prefix}set** : Modifie les parametres du bot 
+                                **${prefix}set.help** : Affiche l'aide des parametres du bot 
+                                
                                 **${prefix}help** : Affiche ce message
                                 **${prefix}ascii **{text} : genere le text spécifié en art ascii !
                                 **${prefix}ban** {user} : Banni l'utilisateur spécifié si vous en avez l'autorisation ! 

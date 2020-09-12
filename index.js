@@ -23,20 +23,18 @@ const cooldowns = new Discord.Collection();
 
 client.once('ready', () => { // quand le bot est pret :
 	console.clear() // effacer l'ecran de la console 
-	console.log('\33[92mClient ready at \33[94m' + client.user.tag); // on imprinte 'client ready at client.user.tag' dans la console 
+	console.log('\33[92mClient ready at \33[94m' + client.user.tag + '\33[92m'); // on imprinte 'client ready at client.user.tag' dans la console 
     client.user.setActivity('Visual Studio Code', { type: 'PLAYING' }); // on definie le statut du bot 
 });
 
 
 client.on('message', (message) =>{ // quand il y a un message alors :
-		
 
-
-
+	
 
 	if(!message.channel.guild & !message.author.bot) {
-		console.log('\33[92m', message.author.username, 'a dit :\33[94m', message.content.toLocaleLowerCase()) // on empreinte ce que contient le message dans la console 
-
+		console.log(message.author.username, 'a dit :\33[94m', message.content.toLocaleLowerCase(), '\33[92m en MP \33[92m') // on empreinte ce que contient le message dans la console 
+		
 		GetRandomInt(1, 7)
 		
 		if( RandomInt == 1) Answer = "QnJhdm8sIHR1IHZpZW5zIGRlIHBlcmRyZSAyIG1pbnV0ZXMgZGUgdmllLg=="
@@ -52,7 +50,7 @@ client.on('message', (message) =>{ // quand il y a un message alors :
 	}
 		if (!message.content.startsWith(prefix) || message.author.bot) return; // si le message ne commence pas par un point d'exclamation ou que l'hauteur du message est un bot alors on annule 
 
-		console.log('\33[92m', message.author.username, 'a dit :\33[94m', message.content.toLocaleLowerCase()) // on empreinte ce que contient le message dans la console 
+		console.log(message.author.username, 'a dit :\33[94m', message.content.toLocaleLowerCase(), '\33[92m Dans le serveur : \33[94m', message.guild.name, '\33[92m') // on empreinte ce que contient le message dans la console 
 
 	botjs.execute(message, client); // on execute bot.js 
 	insult_detection.execute(message, client);
