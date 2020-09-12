@@ -6,6 +6,7 @@ const botjs = require(`./files/bot.js`); // importation de bot.js
 const insult_detection = require('./files/insult_detection.js')
 
 const { prefix, token } = require('./files/config.json'); // importation du prefix et du token a partir du fichier config.json
+const emojis = require('./commands/emojis.js');
 const client = new Discord.Client(); // création d'une constante client qui est egale a new Discord.Client()
 
 client.login(token); // on fait se connecter le bot 
@@ -28,14 +29,13 @@ client.once('ready', () => { // quand le bot est pret :
 
 
 client.on('message', (message) =>{ // quand il y a un message alors :
-	
-
+		
 
 
 
 
 	if(!message.channel.guild & !message.author.bot) {
-		console.log('\33[92mNouveau message :\33[94m', message.content.toLocaleLowerCase()) // on empreinte ce que contient le message dans la console 
+		console.log('\33[92m', message.author.username, 'a dit :\33[94m', message.content.toLocaleLowerCase()) // on empreinte ce que contient le message dans la console 
 
 		GetRandomInt(1, 7)
 		
@@ -52,7 +52,7 @@ client.on('message', (message) =>{ // quand il y a un message alors :
 	}
 		if (!message.content.startsWith(prefix) || message.author.bot) return; // si le message ne commence pas par un point d'exclamation ou que l'hauteur du message est un bot alors on annule 
 
-		console.log('\33[92mNouveau message :\33[94m', message.content.toLocaleLowerCase()) // on empreinte ce que contient le message dans la console 
+		console.log('\33[92m', message.author.username, 'a dit :\33[94m', message.content.toLocaleLowerCase()) // on empreinte ce que contient le message dans la console 
 
 	botjs.execute(message, client); // on execute bot.js 
 	insult_detection.execute(message, client);
