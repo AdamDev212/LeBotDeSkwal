@@ -7,7 +7,7 @@ module.exports = {
 	cooldown: 1,
 	execute(message, args) {
         const data = [];
-        const { prefix } = require('../config.json');
+		const { prefix } = require('../files/config.json');
 
 		const { commands } = message.client;
 		const Discord = require('discord.js');

@@ -2,10 +2,10 @@
 
 const fs = require('fs'); // importation du module 'fs'
 const Discord = require('discord.js'); // importation du module discord.js
-const botjs = require(`./bot.js`); // importation de bot.js
-const insult_detection = require('./insult_detection.js')
+const botjs = require(`./files/bot.js`); // importation de bot.js
+const insult_detection = require('./files/insult_detection.js')
 
-const { prefix, token } = require('./config.json'); // importation du prefix et du token a partir du fichier config.json
+const { prefix, token } = require('./files/config.json'); // importation du prefix et du token a partir du fichier config.json
 const client = new Discord.Client(); // création d'une constante client qui est egale a new Discord.Client()
 
 client.login(token); // on fait se connecter le bot 
