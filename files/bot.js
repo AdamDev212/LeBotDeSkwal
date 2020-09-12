@@ -7,7 +7,7 @@ module.exports = {
 	execute(message, client) {
 
                 const ascii = require('ascii-art');
-		const { prefix } = require('./config.json');
+		const { prefix } = require('../files/config.json');
 		function GetRandomInt(min, max){
                         
 			min = Math.ceil(min);

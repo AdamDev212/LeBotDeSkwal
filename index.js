@@ -30,6 +30,10 @@ client.once('ready', () => { // quand le bot est pret :
 client.on('message', (message) =>{ // quand il y a un message alors :
 	
 
+
+
+
+
 	if(!message.channel.guild & !message.author.bot) {
 		console.log('\33[92mNouveau message :\33[94m', message.content.toLocaleLowerCase()) // on empreinte ce que contient le message dans la console 
 

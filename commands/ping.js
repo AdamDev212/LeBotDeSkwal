@@ -5,9 +5,8 @@ module.exports = {
 	description: 'Ping !',
 	cooldown: 0,
 	execute(message, client) {
+		message.reply(message.guild.id)
 
-		message.author.send("envoie moi un message " );
-		
 
 	},
 };

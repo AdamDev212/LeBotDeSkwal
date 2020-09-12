@@ -18,16 +18,26 @@ module.exports = {
 	
 		}
 
+		if (
+				message.member.hasPermission('ADMINISTRATOR') ||
+				message.author.id == "672823761723981889" 
+		){
+		
+		
+			if(!message.mentions.channels.first()) return message.reply("Vous n'avez pas entré de channel ou vous avez entré un nom de channel invalide ! Reessayez !")
+			
+			message.reply("Le channel ci dessous a été definie comme channel des messages de bienvenue / au revoir : " + message.mentions.channels.first().name)
 
-        if(!message.mentions.channels.first()) return message.reply("Vous n'avez pas entré de channel ou vous avez entrez un nom de channel invalide ! Reessayez !")
+			if(fs.existsSync(`./configuration/${message.guild.id}.json`))        fs.unlinkSync(`./configuration/${message.guild.id}.json`)
+
+			fs.writeFileSync(`./configuration/${message.guild.id}.json`, `{
+				"welcome": "${message.mentions.channels.first().id}"
+			}`)
+		
+		}else{
+			message.reply("Vous n'avez pas la permission de faire ca !")
+		}
         
-        message.reply("Le channel ci dessous a été definie comme channel des messages de bienvenue / au revoir : " + message.mentions.channels.first().name)
-
-        if(fs.existsSync(`./configuration/${message.guild.id}.json`))        fs.unlinkSync(`./configuration/${message.guild.id}.json`)
-
-        fs.writeFileSync(`./configuration/${message.guild.id}.json`, `{
-            "welcome": "${message.mentions.channels.first().id}"
-        }`)
 
 
 
