@@ -5,7 +5,7 @@ module.exports = {
 	description: 'Ping !',
 	cooldown: 0,
 	execute(message, client) {		
-		message.reply(message.guild.emojis.cache.size)
+		message.reply('sfsdf')
 		
 
 	},

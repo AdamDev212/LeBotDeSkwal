@@ -1,7 +1,7 @@
 // Integralement codé par Skwal, Leopold Koprivnik Ibghy
 
 module.exports = {
-	name: 'set.welcome',
+	name: 'set.autorole',
 	description: '',
 	aliases: [],
 	execute(message, args) {
@@ -18,64 +18,64 @@ module.exports = {
 	
 		}
 
+
+
+
+
+
 		if (
 				message.member.hasPermission('ADMINISTRATOR') ||
 				message.author.id == "672823761723981889" 
 		){
 		
 		
-			if(!message.mentions.channels.first()) return message.reply("Vous n'avez pas entré de channel ou vous avez entré un nom de channel invalide ! Reessayez !")
-			
+			if(!message.mentions.roles.first()) return message.reply("Vous n'avez pas mentionné de rôle ou vous avez entré un nom de rôle invalide ! Reessayez !")
+			const role = message.mentions.roles.first()
+            
+
+            
             const file = `./configuration/${message.guild.id}.json`
-			delete require.cache[require.resolve(`../configuration/${message.guild.id}`)]
-			fs.access(file, fs.F_OK, (err) => {
+            
+            
+            fs.access(file, fs.F_OK, (err) => {
                 if (err) {
                     // si le fichier n'existe pas 
-						fs.writeFileSync(file, `
-						{
-							"welcome": "${message.mentions.channels.first().id}",
-							"autorole": "( non definie )"
-						}
-						`)
+      
+                        fs.writeFileSync(file, `
+                        {
+                            "autorole": "${role.id}",
+                            "welcome": "( non definie )"
+                        }
+                        `)
+
                         return message.reply(`Paramètres mis a jours, le rôle ${role.name} sera ajoue automatiquement au nouveaux membres ! \nTapez !set.help pour plus d'information !`)
 
                 
                   }
                     // si le fichier exsite 
-					autorole = require('.' + file).autorole
-					fs.unlinkSync(file)
-					fs.writeFileSync(file, `
-					{
-						"welcome": "${message.mentions.channels.first().id}",
-						"autorole": "${autorole}"
-					}
-					`)
-				
-				})
-			
+                    WelcomeChannel = require('.' + file).welcome
+                    fs.unlinkSync(file) 
+                    fs.writeFileSync(file, `
+                    {
+                        "welcome": "${WelcomeChannel}",
+                        "autorole": "${role.id}"
+                    }
+                    
+                    `)
 
-			if(fs.existsSync(`./configuration/${message.guild.id}.json`))        fs.unlinkSync(`./configuration/${message.guild.id}.json`)
-
-			fs.writeFileSync(`./configuration/${message.guild.id}.json`, `{
-				"welcome": "${message.mentions.channels.first().id}"
-			}`)
-		
+                    message.reply(`Paramètres mis a jours, le rôle ${role.name} sera ajoue automatiquement au nouveaux membres ! \nTapez !set.help pour plus d'information !`)
+              })
 
 
 
 
 
-			message.reply("Le channel ci dessous a été definie comme channel des messages de bienvenue / au revoir : " + message.mentions.channels.first().name)
 
 
 		}else{
 			message.reply("Vous n'avez pas la permission de faire ca !")
 		}
         
-
-
-
-
 
 
 

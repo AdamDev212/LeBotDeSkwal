@@ -24,6 +24,7 @@ module.exports = {
                                             .setAuthor('LeBotDeSkwal', 'https://cdn.discordapp.com/avatars/739794179072196704/14289541d905dca6f8f2ad6961acd82a.webp')
                                             .setTitle(`LeBotDeSkwal.SET`)
                                             .setDescription(`**${prefix}set.welcome** {#channel} : Definie le channel des messages de bienvenue
+											**${prefix}set.autorole** : Definie le role donné automatiquement a l'arrivé d'un nouveau membre 
 											**${prefix}set.reset** : remet tout les paramètres a leur valeur par defaut !
 
                                             **PS** : n'oublie pas de t'abonner a notre chaine si ce n'est pas deja fait  

@@ -14,10 +14,7 @@ client.login(token); // on fait se connecter le bot
 client.commands = new Discord.Collection(); // defnir client.commands qui est egale a une collection de Discord
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js')); //
 
-for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
-	client.commands.set(command.name, command);
-}
+
 
 const cooldowns = new Discord.Collection();
 
@@ -29,6 +26,15 @@ client.once('ready', () => { // quand le bot est pret :
 
 
 client.on('message', (message) =>{ // quand il y a un message alors :
+
+	
+
+	for (const file of commandFiles) {
+		delete require.cache[require.resolve(`./commands/${file}`)]
+		const command = require(`./commands/${file}`);
+		
+		client.commands.set(command.name, command);
+	}
 
 	
 
@@ -91,13 +97,35 @@ client.on('guildMemberRemove', member => {
 			.setThumbnail(member.user.avatarURL())
 			.setTimestamp();
 			
+			file = `./configuration/${member.guild.id}`
+
+			fs.access(file, fs.F_OK, (err) => {
+                if (err) {
+                    // si le fichier n'existe pas 
+      
+                        return
+
+                
+                  }
+                    // si le fichier exsite 
+					delete require.cache[require.resolve(file)]
+
+				
+				})
 
 
-	delete require.cache[require.resolve(`./configuration/${member.guild.id}`)]
-	const channel = member.guild.channels.cache.find(ch => ch.id === require(`./configuration/${member.guild.id}`).welcome);
-	channel.send(ByeEmbed);
 
 
+				if(isNaN(require(file).welcome)) {
+					console.log(member.username + ' vient juste de quitter le serveur \33[92m' + member.guild.name);
+				}else{
+					console.log(member.username + ' vient juste de quitter le serveur \33[92m' + member.guild.name + " \33[94m, message d'en revoir envoyé dans le channel " + member.guild.channels.cache.find(ch => ch.id == require(file).welcome).name);
+
+					member.guild.channels.cache.find(ch => ch.id === require(file).welcome).send(ByeEmbed);
+				}
+
+
+	
 
 	
 			
@@ -105,7 +133,7 @@ client.on('guildMemberRemove', member => {
 
 client.on('guildMemberAdd', member => {
 
-	const WelcomEmbed = new Discord.MessageEmbed()
+	const WelcomeEmbed = new Discord.MessageEmbed()
 			.setColor('#18ffff')
 			.setAuthor('LeBotDeSkwal', 'https://cdn.discordapp.com/avatars/739794179072196704/14289541d905dca6f8f2ad6961acd82a.webp')
 			.setTitle(`Bienvenue dans le serveur ${member.guild.name} ! <a:hi:744172079917695012> <a:dance:744172321723383838>`)
@@ -115,18 +143,46 @@ client.on('guildMemberAdd', member => {
 			.setTimestamp();
 			
 
+			file = `./configuration/${member.guild.id}`
 
-	delete require.cache[require.resolve(`./configuration/${member.guild.id}`)]
-	const channel = member.guild.channels.cache.find(ch => ch.id === require(`./configuration/${member.guild.id}`).welcome);
-	channel.send(WelcomEmbed);
+			fs.access(file, fs.F_OK, (err) => {
+                if (err) {
+                    // si le fichier n'existe pas 
+      
+                        return
+
+                
+                  }
+                    // si le fichier exsite 
+					delete require.cache[require.resolve(file)]
+
+				
+				})
+
+
+				if(isNaN(require(file).welcome)) {
+					console.log(member.username + ' vient juste de rejoindre le serveur \33[92m' + member.guild.name);
+				}else{
+					console.log(member.username + ' vient juste de rejoindre le serveur \33[92m' + member.guild.name + '\33[94m, \nmessage de bienvenue envoyé dans le channel ' + member.guild.channels.cache.find(ch => ch.id == require(file).welcome).name);
+					delete require.cache[require.resolve(file)]
+
+					member.guild.channels.cache.find(ch => ch.id === require(file).welcome).send(WelcomeEmbed);
+				}
 
 
 
-	try {
-		member.send(WelcomEmbed);
-	} catch (error) {
-		console.log("\33[91m Impossible d'envoyer un message a l'utilisateur ! \nDetails : ", error)
-	}
+				if(isNaN(require(file).autorole)) {
+					console.log(member.username + ' vient juste de rejoindre le serveur \33[92m' + member.guild.name + ", \nAucun rôle n'a été attribué !");
+
+				}else {
+					member.roles.add(member.guild.roles.cache.find(role => role.id == require(file).autorole))
+					console.log(member.username + ' vient juste de rejoindre le serveur \33[92m' + member.guild.name + '\33[94m, \nLe rôle ' + member.guild.roles.cache.find(r => r.id == require(file).autorole).name);
+
+				}
+
+
+				member.send(WelcomeEmbed)
+	
 });
 
 
