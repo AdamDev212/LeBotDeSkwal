@@ -23,7 +23,7 @@ module.exports = {
 				message.author.id == "672823761723981889" 
 		){
 		
-            const file = `./configuration/${message.guild.id}.json`
+            const file = `./guild_settings/${message.guild.id}.json`
             
             
             fs.access(file, fs.F_OK, (err) => {

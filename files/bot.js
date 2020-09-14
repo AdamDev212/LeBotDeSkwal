@@ -28,7 +28,14 @@ module.exports = {
 
 
 
-
+                        if (message.content.toLocaleLowerCase() == `${prefix}je te parle`) message.reply("Ba je m'en bas les couilles.... mince")
+                        if (message.content.toLocaleLowerCase() == `${prefix}je me prends un vent`) message.reply("Ba CHEH")
+                        if (message.content.toLocaleLowerCase() == `${prefix}easter egg`) message.reply("MP || OSS du bot")
+                        if (message.content.toLocaleLowerCase() == `${prefix}dis moi l'easter egg`) message.reply("MP || OSS du bot")
+                        if (message.content.toLocaleLowerCase() == `${prefix}dis moi l'easter egg stp`) message.reply("MP || OSS du bot")
+                        if (message.content.toLocaleLowerCase() == `${prefix}dis moi l'easter egg`) message.reply("MP || OSS du bot")
+                        if (message.content.toLocaleLowerCase() == `${prefix}dis l'easter egg`) message.reply("MP || OSS du bot")
+                        if (message.content.toLocaleLowerCase() == `${prefix}dis l'easter egg stp`) message.reply("MP || OSS du bot")
                         
 
                         //#region BIENVENUE
@@ -43,7 +50,8 @@ module.exports = {
                                                 message.content.toLocaleLowerCase()  === `${prefix}bonjour` ||
                                                 message.content.toLocaleLowerCase()  === `${prefix}et le bot`  ||
                                                 message.content.toLocaleLowerCase()  === `${prefix}hey`   ||
-                                                message  === `${prefix}cv`   ||
+                                                message.content.toLocaleLowerCase()  === `${prefix}cv`   ||
+                                                message.content.toLocaleLowerCase()  === `${prefix}yo mec`   ||
                                                 message.content.toLocaleLowerCase()  === `${prefix}LeBotDeSkwal`   || 
                                                 message.content.toLocaleLowerCase()  === `${prefix}hé, dis`   || 
                                                 message.content.toLocaleLowerCase()  === `${prefix}hé le bot!`   || 
@@ -84,6 +92,7 @@ module.exports = {
                                         if (
                                                 message.content.toLocaleLowerCase()  === `${prefix}bien ou bien`             ||
                                                 message.content.toLocaleLowerCase()  === `${prefix}ca va`                    ||
+                                                message.content.toLocaleLowerCase()  === `${prefix}tu vas bien`                    ||
                                                 message.content.toLocaleLowerCase()  === `${prefix}yo le bot ca va`          ||
                                                 message.content.toLocaleLowerCase()  === `${prefix}he le bot comment ca va`  ||
                                                 message.content.toLocaleLowerCase()  === `${prefix}cava`                     ||

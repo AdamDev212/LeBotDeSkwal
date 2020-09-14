@@ -26,8 +26,9 @@ module.exports = {
 		
 			if(!message.mentions.channels.first()) return message.reply("Vous n'avez pas entré de channel ou vous avez entré un nom de channel invalide ! Reessayez !")
 			
-            const file = `./configuration/${message.guild.id}.json`
-			delete require.cache[require.resolve(`../configuration/${message.guild.id}`)]
+            const file = `./guild_settings/${message.guild.id}.json`
+			delete require.cache[require.resolve(`../guild_settings/${message.guild.id}`)]
+
 			fs.access(file, fs.F_OK, (err) => {
                 if (err) {
                     // si le fichier n'existe pas 
@@ -54,9 +55,9 @@ module.exports = {
 				})
 			
 
-			if(fs.existsSync(`./configuration/${message.guild.id}.json`))        fs.unlinkSync(`./configuration/${message.guild.id}.json`)
+			if(fs.existsSync(`./guild_settings/${message.guild.id}.json`))        fs.unlinkSync(`./guild_settings/${message.guild.id}.json`)
 
-			fs.writeFileSync(`./configuration/${message.guild.id}.json`, `{
+			fs.writeFileSync(`./guild_settings/${message.guild.id}.json`, `{
 				"welcome": "${message.mentions.channels.first().id}"
 			}`)
 		

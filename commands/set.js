@@ -13,7 +13,7 @@ module.exports = {
 		
 
             
-        const file = `./configuration/${message.guild.id}.json`
+        const file = `./guild_settings/${message.guild.id}.json`
 
         fs.access(file, fs.F_OK, (err) => {
           if (err) {
@@ -34,7 +34,7 @@ module.exports = {
                     Channel des messages de bienvenue / au revoir : ( non defini ) 
                     Aurorole : ( non definie ) 
 
-                    **[Notre chaine](https://youtube.com/Skwal) ● [Notre site web](https://skwal.tk) ● [Invitez moi](https://discord.com/api/oauth2/authorize?client_id=739794179072196704&permissions=8&scope=bot)**`)
+                    **[Aide](https://discord.com/invite/U4ryW8Y) ● [GitHub](https://github.com/SkwalExe) ● [Notre chaine](https://youtube.com/Skwal) ● [Notre site web](https://skwal.tk) ● [Invitez moi](https://discord.com/api/oauth2/authorize?client_id=739794179072196704&permissions=8&scope=bot)**`)
                     
                     .setThumbnail("https://img.icons8.com/bubbles/2x/help.png")
 
@@ -46,9 +46,9 @@ module.exports = {
 
             // si le fichier existe 
             
-                    delete require.cache[require.resolve(`../configuration/${message.guild.id}`)]
-                        if(isNaN(require(`../configuration/${message.guild.id}`).welcome)) {WelcomeChannel = "( non definie )"} else {WelcomeChannel = message.guild.channels.cache.find(ch => ch.id == require(`../configuration/${message.guild.id}`).welcome ).name}
-                        if(isNaN(require(`../configuration/${message.guild.id}`).autorole)) {autorole = "( non definie )"} else {autorole = message.guild.roles.cache.find(role => role.id == require(`../configuration/${message.guild.id}`).autorole).name}
+                    delete require.cache[require.resolve(`../guild_settings/${message.guild.id}`)]
+                        if(isNaN(require(`../guild_settings/${message.guild.id}`).welcome)) {WelcomeChannel = "( non definie )"} else {WelcomeChannel = message.guild.channels.cache.find(ch => ch.id == require(`../guild_settings/${message.guild.id}`).welcome ).name}
+                        if(isNaN(require(`../guild_settings/${message.guild.id}`).autorole)) {autorole = "( non definie )"} else {autorole = message.guild.roles.cache.find(role => role.id == require(`../guild_settings/${message.guild.id}`).autorole).name}
                     
                     
 
@@ -61,7 +61,7 @@ module.exports = {
                         Channel des messages de bienvenue / au revoir : ${WelcomeChannel}
                         Autorole : ${autorole}
 
-                        **[Notre chaine](https://youtube.com/Skwal) ● [Notre site web](https://skwal.tk) ● [Invitez moi](https://discord.com/api/oauth2/authorize?client_id=739794179072196704&permissions=8&scope=bot)**`)
+                        **[Aide](https://discord.com/invite/U4ryW8Y) ● [GitHub](https://github.com/SkwalExe) ● [Notre chaine](https://youtube.com/Skwal) ● [Notre site web](https://skwal.tk) ● [Invitez moi](https://discord.com/api/oauth2/authorize?client_id=739794179072196704&permissions=8&scope=bot)**`)
                         
                         .setThumbnail("https://img.icons8.com/bubbles/2x/help.png")
 

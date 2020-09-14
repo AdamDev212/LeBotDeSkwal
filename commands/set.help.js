@@ -29,7 +29,7 @@ module.exports = {
 
                                             **PS** : n'oublie pas de t'abonner a notre chaine si ce n'est pas deja fait  
                                             
-                                            **[Notre chaine](https://youtube.com/Skwal) ● [Notre site web](https://skwal.tk) ● [Invitez moi](https://discord.com/api/oauth2/authorize?client_id=739794179072196704&permissions=8&scope=bot)**`)
+											**[Aide](https://discord.com/invite/U4ryW8Y) ● [GitHub](https://github.com/SkwalExe) ● [Notre chaine](https://youtube.com/Skwal) ● [Notre site web](https://skwal.tk) ● [Invitez moi](https://discord.com/api/oauth2/authorize?client_id=739794179072196704&permissions=8&scope=bot)**`)
                                             
                                             .setThumbnail("https://img.icons8.com/bubbles/2x/help.png")
 

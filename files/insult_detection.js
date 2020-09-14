@@ -19,6 +19,9 @@ module.exports = {
 		}
         if(message.content.startsWith('!ascii')) return;
         if(!message.author.bot & message.content.startsWith(prefix) & !message.content.startsWith('!dis') & !message.content.startsWith('!repete')){
+			
+			
+			
 			if ( message.content.toLowerCase().includes('merde') || // si le message contient : merde
 			message.content.toLowerCase().includes(' moche') ||  // si le message contient : moche
 			message.content.toLowerCase().includes(' gueule') ||  // si le message contient : gueule
@@ -37,7 +40,16 @@ module.exports = {
 			){
 
 					message.react('😭'); // le bot reagis au message par 😭
-					message.channel.send("Hé euuuuu pourquoi tu m'insulte sniffff snifff :cry:"); // le bot envoie "Hé euuuuu pourquoi tu m'insulte sniffff snifff :cry:"
+
+					GetRandomInt(1, 5)
+					if(RandomInt == 1) answer = "Ai-je vraiment mérité cela ?"
+					if(RandomInt == 2) answer = "Toi meme face de prout"
+					if(RandomInt == 3) answer = "Tu es très sympa, <= cette phrase est un mensonge !"
+					if(RandomInt == 4) answer = "J'ai été conçu pour t'ignorer.... mince !"
+					if(RandomInt == 5) answer = "VHUgdmllbnQgZGUgcGVyZGUgMTAgbWludXRlcyBkZSB0YSB2aWUuLi4uIENIRUggIQ=="
+
+
+					message.channel.send(answer); // le bot envoie "Hé euuuuu pourquoi tu m'insulte sniffff snifff :cry:"
                 
 			}
 

@@ -1,5 +1,4 @@
 // Integralement codé par Skwal, Leopold Koprivnik Ibghy
-
 const fs = require('fs'); // importation du module 'fs'
 const Discord = require('discord.js'); // importation du module discord.js
 const botjs = require(`./files/bot.js`); // importation de bot.js
@@ -26,7 +25,6 @@ client.once('ready', () => { // quand le bot est pret :
 
 
 client.on('message', (message) =>{ // quand il y a un message alors :
-
 	
 
 	for (const file of commandFiles) {
@@ -39,7 +37,7 @@ client.on('message', (message) =>{ // quand il y a un message alors :
 	
 
 	if(!message.channel.guild & !message.author.bot) {
-		console.log(message.author.username, 'a dit :\33[94m', message.content.toLocaleLowerCase(), '\33[92m en MP \33[92m') // on empreinte ce que contient le message dans la console 
+		console.log(message.author.username, 'a dit :\33[94m', message.content.toLocaleLowerCase(), '\33[92m\nEn MP \33[92m') // on empreinte ce que contient le message dans la console 
 		
 		GetRandomInt(1, 7)
 		
@@ -49,14 +47,15 @@ client.on('message', (message) =>{ // quand il y a un message alors :
 		if( RandomInt == 4) Answer = "Raconte pas ta vie !"
 		if( RandomInt == 5) Answer = "J'ai été conçu pour t'ignorer... mince.		"
 		if( RandomInt == 6) Answer = "Ce que tu dis est très intéressant, et cette phrase est un mensonge.		"
-		if( RandomInt == 7) Answer = "Les humains parlent beaucoup...."
+		if( RandomInt == 7) Answer = "Y29kZSBkZSBsJ2Vhc3RlciBlZ2cgOiBTa3dhbDAxMjQ1MTAyMDUwMTAw"
+		if( RandomInt == 8) Answer = "Les humains parlent beaucoup...."
 		console.log("\33[92mEnvoie de la reponse : \33[94m" + Answer) // on empreinte ce que contient le message dans la console 
 
 		return message.channel.send(Answer); // si la conversation se passe dans un DM alors on annule
 	}
 		if (!message.content.startsWith(prefix) || message.author.bot) return; // si le message ne commence pas par un point d'exclamation ou que l'hauteur du message est un bot alors on annule 
 
-		console.log(message.author.username, 'a dit :\33[94m', message.content.toLocaleLowerCase(), '\33[92m Dans le serveur : \33[94m', message.guild.name, '\33[92m') // on empreinte ce que contient le message dans la console 
+		console.log(message.author.username, 'a dit :\33[94m', message.content.toLocaleLowerCase(), '\33[92m\nDans le serveur : \33[94m', message.guild.name, '\33[92m') // on empreinte ce que contient le message dans la console 
 
 	botjs.execute(message, client); // on execute bot.js 
 	insult_detection.execute(message, client);
@@ -97,7 +96,7 @@ client.on('guildMemberRemove', member => {
 			.setThumbnail(member.user.avatarURL())
 			.setTimestamp();
 			
-			file = `./configuration/${member.guild.id}`
+			file = `./guild_settings/${member.guild.id}`
 
 			fs.access(file, fs.F_OK, (err) => {
                 if (err) {
@@ -143,7 +142,7 @@ client.on('guildMemberAdd', member => {
 			.setTimestamp();
 			
 
-			file = `./configuration/${member.guild.id}`
+			file = `./guild_settings/${member.guild.id}`
 
 			fs.access(file, fs.F_OK, (err) => {
                 if (err) {
@@ -184,6 +183,8 @@ client.on('guildMemberAdd', member => {
 				member.send(WelcomeEmbed)
 	
 });
+
+
 
 
 function GetRandomInt(min, max){
